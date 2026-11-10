@@ -1,5 +1,6 @@
 # Každé ráno kolem 6:00 (Praha) spustí hlidac.js, uloží stav zpět do repozitáře
 # a zveřejní přehled (index.html) přes GitHub Pages.
+# Ruční spuštění na zkoušku: záložka Actions -> Hlídač nabídek -> Run workflow.
 name: Hlídač nabídek
 
 on:
