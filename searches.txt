@@ -1,0 +1,2 @@
+bundy;https://www.vinted.cz/catalog?search_text=&catalog[]=2614&status_ids[]=1&status_ids[]=2&status_ids[]=6&brand_ids[]=245240&size_ids[]=5&search_id=5667321534&order=newest_first
+merino;https://www.vinted.cz/catalog?search_text=&catalog[]=12&color_ids[]=5&color_ids[]=6&color_ids[]=8&color_ids[]=9&color_ids[]=12&color_ids[]=17&color_ids[]=20&color_ids[]=24&color_ids[]=25&color_ids[]=26&size_ids[]=5&status_ids[]=1&status_ids[]=2&status_ids[]=6&material_ids[]=121&search_id=3373245234&order=newest_first

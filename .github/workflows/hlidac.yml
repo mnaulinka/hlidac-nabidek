@@ -1,0 +1,98 @@
+# Každé ráno kolem 6:00 (Praha) spustí hlidac.js, uloží stav zpět do repozitáře
+# a zveřejní přehled (index.html) přes GitHub Pages.
+name: Hlídač nabídek
+
+on:
+  schedule:
+    # GitHub počítá čas v UTC. Praha je UTC+2 v létě a UTC+1 v zimě, proto dvě spuštění;
+    # první krok pozná, jestli je v Praze zrovna 6:00, a druhé spuštění ukončí.
+    - cron: "0 4 * * *"
+    - cron: "0 5 * * *"
+  workflow_dispatch: # ruční spuštění tlačítkem „Run workflow“ (hodinu nekontroluje)
+
+# Nikdy nesmí běžet dva běhy najednou (např. plán + ruční spuštění).
+concurrency:
+  group: hlidac-nabidek
+  cancel-in-progress: false
+
+jobs:
+  hlidac:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write # commit stavových souborů zpět do repozitáře
+    outputs:
+      spustit: ${{ steps.cas.outputs.spustit }}
+    steps:
+      - name: Je v Praze 6:00? (jen u plánovaného spuštění)
+        id: cas
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$(TZ=Europe/Prague date +%H)" != "06" ]; then
+            echo "V Praze je $(TZ=Europe/Prague date +%H):xx, ne 6:00 – tento běh přeskakuji."
+            echo "spustit=ne" >> "$GITHUB_OUTPUT"
+          else
+            echo "spustit=ano" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.cas.outputs.spustit == 'ano'
+
+      - uses: actions/setup-node@v4
+        if: steps.cas.outputs.spustit == 'ano'
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Nainstalovat balíčky
+        if: steps.cas.outputs.spustit == 'ano'
+        run: npm ci
+
+      - name: Spustit hlídač
+        id: beh
+        if: steps.cas.outputs.spustit == 'ano'
+        env:
+          # Klíče se berou ze Secrets (Settings → Secrets and variables → Actions). V logu se nezobrazí.
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node hlidac.js
+
+      # Stav (co už hlídač viděl a výsledky) se uloží i po chybném běhu, ať se nic neztratí.
+      - name: Uložit stav zpět do repozitáře
+        if: always() && steps.cas.outputs.spustit == 'ano'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add seen.json results.json last-run.json
+          if git diff --cached --quiet; then
+            echo "Žádné změny ve stavu."
+          else
+            git commit -m "Data: běh $(date -u +%F)"
+            git pull --rebase
+            git push
+          fi
+
+      # Na web se nahraje JEN index.html (nic jiného z repozitáře).
+      - name: Připravit stránku pro GitHub Pages
+        if: steps.cas.outputs.spustit == 'ano'
+        run: |
+          mkdir _site
+          cp index.html _site/
+
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.cas.outputs.spustit == 'ano'
+        with:
+          path: _site
+
+  zverejnit:
+    needs: hlidac
+    if: needs.hlidac.outputs.spustit == 'ano'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,23 @@
+# Tajné klíče – nikdy na GitHub
+.env
+.env.*
+!.env.example
+
+# Instalované balíčky
+node_modules/
+
+# Nastavení nástrojů (lokální, nepatří do repozitáře)
+.claude/
+
+# Lokální pracovní data, která se nenahrávají
+raw-items.json
+results-*.json
+index.html
+
+# Testovací výstupy (testovací skripty *.js se nahrávají, jejich výstupy ne)
+test/*.json
+test/*.html
+test/*.md
+
+# Pozn.: seen.json, results.json a last-run.json se NAOPAK nahrávají – drží stav mezi běhy
+# (GitHub Actions je po každém běhu commitne zpět). index.html se zveřejňuje přes GitHub Pages.

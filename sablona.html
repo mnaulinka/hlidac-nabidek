@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<!--
+  SABLONA.HTML – tohle je soubor, který upravuješ ty.
+  index.html se z něj pokaždé znovu vygeneruje (node stranka.js nebo konec hlidac.js),
+  takže změny dělej vždy tady, nikdy v index.html.
+
+  Soubor má tři části:
+    1) <style>  – vzhled; hned nahoře jsou proměnné s barvami, písmem a rozměry
+    2) <body>   – kostra stránky + <template> s podobou jedné karty nabídky
+    3) <script> – malý JavaScript: vloží data, vykreslí karty, filtr, skrývání, kopírování
+
+  Řádek s /*DATA*/ nesmaž: generátor ho nahradí daty z results.json.
+-->
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#007782">
+  <title>Hlídač nabídek</title>
+
+  <style>
+    /* =====================================================================
+       1) PROMĚNNÉ – tady se mění barvy, písmo a rozměry pro celou stránku
+       ===================================================================== */
+    :root {
+      /* --- Hlavní barva (záhlaví, tlačítka, odkazy) --- */
+      --barva-hlavni: #007782;
+      --barva-hlavni-tmava: #005a63;      /* při najetí / stisku */
+      --barva-hlavni-svetla: #e2f1f2;     /* světlé pozadí chipů a rámečků */
+
+      /* --- Neutrální barvy --- */
+      --barva-pozadi: #f3f5f6;            /* pozadí stránky */
+      --barva-karta: #ffffff;             /* pozadí karet */
+      --barva-text: #1c2b2e;
+      --barva-text-tlumeny: #5a6a6e;      /* popisky, vedlejší informace */
+      --barva-ramecek: #dde4e6;
+
+      /* --- Štítky verdiktu: pozadí + barva textu (záměrně jiné odstíny než hlavní barva) --- */
+      --koupit-pozadi: #2b8a3e;
+      --koupit-text: #ffffff;
+      --zvazit-pozadi: #f2b100;
+      --zvazit-text: #2b1d00;
+      --nekupovat-pozadi: #c62828;
+      --nekupovat-text: #ffffff;
+
+      /* --- Rámeček „kód snížil verdikt“ --- */
+      --varovani-pozadi: #fff6dc;
+      --varovani-ramecek: #e8c766;
+      --varovani-text: #5c4300;
+
+      /* --- Písmo --- */
+      --pismo: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --velikost-zaklad: 16px;            /* základ, od něj se odvozuje zbytek (rem) */
+      --velikost-mala: 0.875rem;          /* popisky */
+      --velikost-nadpis-karty: 1.05rem;
+      --velikost-souhrn: 2rem;            /* velké „Nové: N“ */
+
+      /* --- Rozměry --- */
+      --zaobleni: 12px;                   /* zaoblení rohů karet a tlačítek */
+      --mezera: 12px;                     /* mezera mezi prvky */
+      --sirka-obsahu: 1100px;             /* maximální šířka obsahu na počítači */
+      --stin: 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+
+    /* =====================================================================
+       2) ZÁKLAD STRÁNKY
+       ===================================================================== */
+    * { box-sizing: border-box; }
+    html { font-size: var(--velikost-zaklad); }
+    body {
+      margin: 0;
+      font-family: var(--pismo);
+      color: var(--barva-text);
+      background: var(--barva-pozadi);
+      line-height: 1.45;
+    }
+    [hidden] { display: none !important; }   /* aby atribut hidden fungoval i u prvků s vlastním display */
+    a { color: var(--barva-hlavni); }
+    .obsah { max-width: var(--sirka-obsahu); margin: 0 auto; padding: 0 var(--mezera) 40px; }
+
+    /* =====================================================================
+       3) ZÁHLAVÍ A SOUHRN
+       ===================================================================== */
+    .zahlavi { background: var(--barva-hlavni); color: #fff; padding: 14px 0; }
+    .zahlavi .obsah { padding-bottom: 0; }
+    .zahlavi h1 { margin: 0; font-size: 1.3rem; }
+    .posledni-beh { margin: 2px 0 0; font-size: var(--velikost-mala); opacity: 0.9; }
+
+    .souhrn {
+      background: var(--barva-karta);
+      border-radius: var(--zaobleni);
+      box-shadow: var(--stin);
+      padding: 14px 16px;
+      margin-top: var(--mezera);
+    }
+    .souhrn-velky { font-size: var(--velikost-souhrn); font-weight: 700; line-height: 1.2; }
+    .souhrn-rozpis { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+    .souhrn-mensi { margin: 10px 0 0; font-size: var(--velikost-mala); color: var(--barva-text-tlumeny); }
+
+    /* =====================================================================
+       4) ŠTÍTKY VERDIKTU (používá je souhrn, nadpisy skupin i karty)
+       ===================================================================== */
+    .stitek {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: var(--velikost-mala);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .stitek.koupit    { background: var(--koupit-pozadi);    color: var(--koupit-text); }
+    .stitek.zvazit    { background: var(--zvazit-pozadi);    color: var(--zvazit-text); }
+    .stitek.nekupovat { background: var(--nekupovat-pozadi); color: var(--nekupovat-text); }
+
+    /* =====================================================================
+       5) FILTR A OVLÁDÁNÍ
+       ===================================================================== */
+    .filtr { display: flex; flex-wrap: wrap; gap: 8px; margin: var(--mezera) 0; align-items: center; }
+    .filtr button, .tlacitko, .tlacitko-vedlejsi {
+      font: inherit;
+      min-height: 44px;                 /* pohodlné klepnutí prstem */
+      padding: 0 16px;
+      border-radius: var(--zaobleni);
+      cursor: pointer;
+    }
+    .filtr button {
+      border: 1px solid var(--barva-ramecek);
+      background: var(--barva-karta);
+      color: var(--barva-text);
+    }
+    .filtr button[aria-pressed="true"] {
+      background: var(--barva-hlavni);
+      border-color: var(--barva-hlavni);
+      color: #fff;
+    }
+    .filtr .odkaz-skryte { margin-left: auto; border: none; background: none; color: var(--barva-hlavni); text-decoration: underline; padding: 0 4px; }
+
+    /* =====================================================================
+       6) SKUPINY (KOUPIT / ZVÁŽIT / NEKUPOVAT)
+       ===================================================================== */
+    .skupina { margin-bottom: 18px; }
+    .skupina > summary {
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .skupina > summary .pocet { color: var(--barva-text-tlumeny); font-weight: 400; }
+    /* šipka vpravo: ▾ = rozbaleno, ▸ = sbaleno (výchozí trojúhelník prohlížeče skrýváme) */
+    .skupina > summary { list-style: none; }
+    .skupina > summary::-webkit-details-marker { display: none; }
+    .skupina > summary::after { content: "▾"; margin-left: auto; padding: 0 6px; color: var(--barva-text-tlumeny); }
+    .skupina:not([open]) > summary::after { content: "▸"; }
+    .prazdno { color: var(--barva-text-tlumeny); margin: 4px 0 12px; }
+
+    .seznam { display: grid; gap: var(--mezera); grid-template-columns: 1fr; }
+    @media (min-width: 640px) {
+      .seznam { grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); align-items: start; }
+    }
+
+    /* =====================================================================
+       7) KARTA NABÍDKY
+       ===================================================================== */
+    .karta {
+      background: var(--barva-karta);
+      border-radius: var(--zaobleni);
+      box-shadow: var(--stin);
+      overflow: hidden;
+      border-left: 4px solid transparent;
+    }
+    .karta.nova { border-left-color: var(--barva-hlavni); }          /* pruh u nových nabídek */
+    .karta.karta--skryta { opacity: 0.55; }                          /* skrytá karta, když se zobrazují skryté */
+
+    .karta-foto { position: relative; background: var(--barva-hlavni-svetla); aspect-ratio: 16 / 10; }
+    .karta-foto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .stitek-nove {
+      position: absolute; top: 8px; left: 8px;
+      background: var(--barva-hlavni); color: #fff;
+      font-size: var(--velikost-mala); font-weight: 700;
+      padding: 3px 10px; border-radius: 999px;
+    }
+
+    .karta-telo { padding: 12px 14px 14px; }
+    .karta-radek { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .kategorie { font-size: var(--velikost-mala); color: var(--barva-text-tlumeny); }
+    .karta-nazev { margin: 8px 0 2px; font-size: var(--velikost-nadpis-karty); line-height: 1.3; overflow-wrap: anywhere; }
+    .karta-cena { margin: 0 0 8px; font-size: 1.25rem; font-weight: 700; }
+    .duvody { margin: 0 0 12px; padding-left: 1.1rem; }
+    .duvody li { margin-bottom: 4px; }
+
+    .akce { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+    .tlacitko {
+      display: inline-flex; align-items: center;
+      background: var(--barva-hlavni); color: #fff; border: none; text-decoration: none;
+    }
+    .tlacitko:hover { background: var(--barva-hlavni-tmava); }
+    .tlacitko-vedlejsi { background: var(--barva-karta); border: 1px solid var(--barva-ramecek); color: var(--barva-text); }
+
+    /* =====================================================================
+       8) PODROBNOSTI (rozbalovací <details> uvnitř karty)
+       ===================================================================== */
+    .podrobnosti > summary { cursor: pointer; font-weight: 600; color: var(--barva-hlavni); padding: 8px 0; }
+    .podrobnosti-seznam { margin: 8px 0 0; }
+    .podrobnosti-seznam dt { font-size: var(--velikost-mala); color: var(--barva-text-tlumeny); margin-top: 10px; }
+    .podrobnosti-seznam dd { margin: 2px 0 0; overflow-wrap: anywhere; }
+    .podrobnosti-seznam ul { margin: 2px 0 0; padding-left: 1.1rem; }
+
+    .snizeno {
+      background: var(--varovani-pozadi);
+      border: 1px solid var(--varovani-ramecek);
+      color: var(--varovani-text);
+      border-radius: var(--zaobleni);
+      padding: 10px 12px;
+      margin: 4px 0 8px;
+      font-size: var(--velikost-mala);
+    }
+    .snizeno p { margin: 0 0 4px; }
+    .snizeno ul { margin: 0; padding-left: 1.1rem; }
+
+    .otazky-hlavicka { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 12px; }
+    .otazky-hlavicka span { font-size: var(--velikost-mala); color: var(--barva-text-tlumeny); }
+    .model-info { margin: 12px 0 0; font-size: var(--velikost-mala); color: var(--barva-text-tlumeny); }
+  </style>
+</head>
+
+<body>
+  <!-- =====================================================================
+       KOSTRA STRÁNKY
+       ===================================================================== -->
+  <header class="zahlavi">
+    <div class="obsah">
+      <h1>Hlídač nabídek</h1>
+      <p class="posledni-beh" id="posledni-beh"></p>
+    </div>
+  </header>
+
+  <main class="obsah">
+    <!-- Souhrn: velké „Nové: N“ + počty podle verdiktu, pod tím menším písmem celek -->
+    <section class="souhrn" aria-live="polite">
+      <div class="souhrn-velky">Nové: <span id="nove-pocet">0</span></div>
+      <div class="souhrn-rozpis" id="nove-rozpis"></div>
+      <p class="souhrn-mensi" id="celkem-info"></p>
+    </section>
+
+    <!-- Filtr podle kategorie -->
+    <nav class="filtr" aria-label="Filtr kategorie">
+      <button type="button" data-filtr="vse" aria-pressed="true">Vše</button>
+      <button type="button" data-filtr="bundy" aria-pressed="false">Bundy</button>
+      <button type="button" data-filtr="merino" aria-pressed="false">Merino</button>
+      <button type="button" class="odkaz-skryte" id="prepinac-skryte" hidden></button>
+    </nav>
+
+    <noscript><p>Tato stránka potřebuje zapnutý JavaScript.</p></noscript>
+
+    <!-- Skupiny vloží JavaScript sem -->
+    <div id="skupiny"></div>
+  </main>
+
+  <!-- =====================================================================
+       ŠABLONA KARTY – takhle vypadá jedna nabídka. JavaScript ji naklonuje
+       a do prvků s třídou (.karta-nazev, .karta-cena, …) doplní data.
+       Změníš-li zde HTML, změní se všechny karty. CSS třídy jsou nahoře v <style>.
+       ===================================================================== -->
+  <template id="sablona-karty">
+    <article class="karta">
+      <div class="karta-foto">
+        <img alt="" loading="lazy" referrerpolicy="no-referrer">
+        <span class="stitek-nove" hidden>NOVÉ</span>
+      </div>
+      <div class="karta-telo">
+        <div class="karta-radek">
+          <span class="stitek"></span>
+          <span class="kategorie"></span>
+        </div>
+        <h3 class="karta-nazev"></h3>
+        <p class="karta-cena"></p>
+        <ul class="duvody"></ul>
+        <div class="akce">
+          <a class="tlacitko" target="_blank" rel="noopener noreferrer">Otevřít na Vintedu</a>
+          <button type="button" class="tlacitko-vedlejsi tlacitko-skryt">Skrýt</button>
+        </div>
+        <details class="podrobnosti">
+          <summary>Podrobnosti</summary>
+          <div class="podrobnosti-obsah"></div>
+        </details>
+      </div>
+    </article>
+  </template>
+
+  <!-- Data z results.json vloží generátor (stranka.js) místo /*DATA*/ -->
+  <script id="data" type="application/json">/*DATA*/</script>
+
+  <script>
+    /* =====================================================================
+       3) JAVASCRIPT
+       ===================================================================== */
+    const DATA = JSON.parse(document.getElementById("data").textContent);
+
+    // Pořadí skupin a jejich vzhled. "otevrena: false" = skupina je ve výchozím stavu sbalená.
+    const SKUPINY = [
+      { verdikt: "KOUPIT",     trida: "koupit",    ikona: "✓", otevrena: true },
+      { verdikt: "ZVÁŽIT",     trida: "zvazit",    ikona: "?", otevrena: true },
+      { verdikt: "NEKUPOVAT",  trida: "nekupovat", ikona: "✕", otevrena: false },
+    ];
+    const NAZVY_KATEGORII = { bundy: "Bundy", merino: "Merino" };
+    const KLIC_SKRYTE = "hlidac-skryte"; // pod tímto jménem si prohlížeč pamatuje skryté karty
+
+    /* ---------- Skryté karty: ukládají se v prohlížeči (localStorage) ---------- */
+    function nactiSkryte() {
+      try { return new Set(JSON.parse(localStorage.getItem(KLIC_SKRYTE) || "[]")); }
+      catch (e) { return new Set(); }              // když prohlížeč úložiště zakáže, stránka funguje dál
+    }
+    function ulozSkryte() {
+      try { localStorage.setItem(KLIC_SKRYTE, JSON.stringify([...stav.skryte])); } catch (e) { /* nevadí */ }
+    }
+
+    const stav = { kategorie: "vse", skryte: nactiSkryte(), ukazSkryte: false };
+    const karty = []; // { prvek, nabidka } – všechny vykreslené karty
+
+    /* ---------- Pomocné funkce ---------- */
+    // Vytvoří prvek: el("div", "trida", "text")
+    function el(tag, trida, text) {
+      const prvek = document.createElement(tag);
+      if (trida) prvek.className = trida;
+      if (text !== undefined && text !== null) prvek.textContent = text;
+      return prvek;
+    }
+
+    function cena(kc) {
+      return Math.round(kc).toLocaleString("cs-CZ") + " Kč";
+    }
+    // "2319.87 CZK" -> "2 320 Kč"
+    function formatujCenuNabidky(retezec) {
+      if (!retezec) return "cena neuvedena";
+      const [castka, mena] = retezec.split(" ");
+      return mena === "CZK" ? cena(Number(castka)) : retezec;
+    }
+    function formatujDatum(iso) {
+      return new Date(iso).toLocaleString("cs-CZ", { dateStyle: "medium", timeStyle: "short" });
+    }
+
+    /* ---------- Podrobnosti karty ---------- */
+    // Přidá do seznamu <dl> dvojici název + hodnota (prázdné hodnoty přeskočí).
+    function radek(dl, nazev, hodnota) {
+      if (hodnota === undefined || hodnota === null || hodnota === "") return;
+      dl.append(el("dt", "", nazev), el("dd", "", hodnota));
+    }
+    function radekSeznam(dl, nazev, polozky) {
+      if (!polozky || polozky.length === 0) return;
+      const ul = el("ul");
+      polozky.forEach((p) => ul.append(el("li", "", p)));
+      const dd = el("dd");
+      dd.append(ul);
+      dl.append(el("dt", "", nazev), dd);
+    }
+
+    function kopirovat(text, tlacitko) {
+      const hotovo = () => {
+        const puvodni = tlacitko.textContent;
+        tlacitko.textContent = "Zkopírováno ✓";
+        setTimeout(() => (tlacitko.textContent = puvodni), 1500);
+      };
+      // Moderní způsob; u souboru otevřeného dvojklikem ho některé prohlížeče zakážou, proto záloha.
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(hotovo, () => zalohaKopirovani(text, hotovo));
+      } else {
+        zalohaKopirovani(text, hotovo);
+      }
+    }
+    function zalohaKopirovani(text, hotovo) {
+      const pole = document.createElement("textarea");
+      pole.value = text;
+      pole.style.position = "fixed";
+      pole.style.opacity = "0";
+      document.body.append(pole);
+      pole.select();
+      try { document.execCommand("copy"); hotovo(); } catch (e) { /* nic */ }
+      pole.remove();
+    }
+
+    function postavPodrobnosti(n) {
+      const p = n.podrobnosti || {};
+      const kontejner = el("div");
+
+      // Info, když kód verdikt snížil
+      if (n.upraveno_kodem && n.upraveno_kodem.length > 0) {
+        const box = el("div", "snizeno");
+        box.append(el("p", "", `Kód snížil verdikt z ${n.navrzeny_verdikt} na ${n.verdikt}:`));
+        const ul = el("ul");
+        n.upraveno_kodem.forEach((u) => ul.append(el("li", "", u.poznamka)));
+        box.append(ul);
+        kontejner.append(box);
+      }
+
+      const dl = el("dl", "podrobnosti-seznam");
+      radek(dl, "Typ izolace", p.typ_izolace);                       // jen u bund
+
+      if (p.stari_modelu) {
+        const s = p.stari_modelu;
+        radek(dl, "Odhad stáří modelu", `${s.odhad} (jistota: ${s.jistota}) – ${s.z_ceho}`);
+      }
+
+      if (p.cena_nove) {
+        const c = p.cena_nove;
+        radek(dl, "Cena nové věci (odhad)", `${cena(c.od_kc)} – ${cena(c.do_kc)} (jistota: ${c.jistota}) – ${c.z_ceho}`);
+        const r = c.pomer_ceny || {};
+        if (r.pri_dolni_mezi_pct !== undefined && r.pri_dolni_mezi_pct !== null) {
+          radek(dl, "Cena nabídky vůči ceně nové",
+            `${r.pri_horni_mezi_pct} % (při horní mezi odhadu) až ${r.pri_dolni_mezi_pct} % (při dolní mezi); limit ${n.stav.limit_ceny_pct} %`);
+        } else if (r.poznamka) {
+          radek(dl, "Cena nabídky vůči ceně nové", r.poznamka);
+        }
+      }
+
+      radek(dl, "Izolace / materiál", p.izolace_material);
+      if ("prirodna_vlakna_pct" in p) {                              // jen u merina
+        radek(dl, "Přírodní vlákna", p.prirodna_vlakna_pct === null ? "nezjištěno" : `${p.prirodna_vlakna_pct} %`);
+      }
+      radek(dl, "Stav podle fotek", p.stav_podle_fotek);
+      radekSeznam(dl, "Chybějící fotky", p.chybejici_fotky);
+      radek(dl, "Prodávající", p.prodavajici);
+      radekSeznam(dl, "Upozornění k odpovědi", n.upozorneni_na_odpoved);
+      kontejner.append(dl);
+
+      // Otázky na prodávajícího + tlačítko Kopírovat
+      const otazky = p.otazky_na_prodavajiciho || [];
+      if (otazky.length > 0) {
+        const hlavicka = el("div", "otazky-hlavicka");
+        hlavicka.append(el("span", "", "Otázky na prodávajícího"));
+        const tlacitko = el("button", "tlacitko-vedlejsi", "Kopírovat");
+        tlacitko.type = "button";
+        tlacitko.addEventListener("click", () => kopirovat(otazky.map((o) => "- " + o).join("\n"), tlacitko));
+        hlavicka.append(tlacitko);
+        const ul = el("ul");
+        otazky.forEach((o) => ul.append(el("li", "", o)));
+        kontejner.append(hlavicka, ul);
+      }
+
+      const model = n.model + (n.pouziti && n.pouziti.zalozni_model ? ` (záložní model: ${n.pouziti.zalozni_model})` : "");
+      kontejner.append(el("p", "model-info", `Hodnotil: ${model} · ${formatujDatum(n.hodnoceno)}`));
+      return kontejner;
+    }
+
+    /* ---------- Jedna karta: naklonuje <template> a doplní data ---------- */
+    function vytvorKartu(n, jeNova) {
+      const prvek = document.getElementById("sablona-karty").content.firstElementChild.cloneNode(true);
+      const skupina = SKUPINY.find((s) => s.verdikt === n.verdikt);
+
+      if (jeNova) {
+        prvek.classList.add("nova");
+        prvek.querySelector(".stitek-nove").hidden = false;
+      }
+      const foto = prvek.querySelector("img");
+      if (n.foto) foto.src = n.foto; else foto.remove();
+      foto.alt = n.nazev;
+
+      const stitek = prvek.querySelector(".stitek");
+      stitek.classList.add(skupina.trida);
+      stitek.textContent = `${skupina.ikona} ${n.verdikt}`;
+      prvek.querySelector(".kategorie").textContent = NAZVY_KATEGORII[n.kategorie] || n.kategorie;
+      prvek.querySelector(".karta-nazev").textContent = n.nazev;
+      prvek.querySelector(".karta-cena").textContent = formatujCenuNabidky(n.cena_celkem);
+
+      const duvody = prvek.querySelector(".duvody");
+      n.duvody.forEach((d) => duvody.append(el("li", "", d)));
+
+      const odkaz = prvek.querySelector("a.tlacitko");
+      if (/^https:\/\//.test(n.url)) odkaz.href = n.url; else odkaz.remove();
+
+      prvek.querySelector(".podrobnosti-obsah").append(postavPodrobnosti(n));
+
+      prvek.querySelector(".tlacitko-skryt").addEventListener("click", () => {
+        if (stav.skryte.has(n.id)) stav.skryte.delete(n.id); else stav.skryte.add(n.id);
+        ulozSkryte();
+        aktualizuj();
+      });
+      return prvek;
+    }
+
+    /* ---------- Sestavení stránky (jednou na začátku) ---------- */
+    const idNove = new Set(
+      DATA.posledniBeh ? DATA.nabidky.filter((n) => n.beh_id === DATA.posledniBeh.id).map((n) => n.id) : []
+    );
+    const skupinyPrvky = {}; // verdikt -> { details, seznam, pocet, prazdno }
+
+    function postavStranku() {
+      const kontejner = document.getElementById("skupiny");
+      SKUPINY.forEach((s) => {
+        const details = el("details", "skupina");
+        details.open = s.otevrena;
+        const nadpis = el("summary");
+        nadpis.append(el("span", "stitek " + s.trida, `${s.ikona} ${s.verdikt}`));
+        const pocet = el("span", "pocet");
+        nadpis.append(pocet);
+        const prazdno = el("p", "prazdno", "Žádné nabídky.");
+        const seznam = el("div", "seznam");
+        details.append(nadpis, prazdno, seznam);
+        kontejner.append(details);
+        skupinyPrvky[s.verdikt] = { details, seznam, pocet, prazdno };
+      });
+
+      // Řazení uvnitř skupiny: nové jako první, pak od nejnovějších
+      const serazene = [...DATA.nabidky].sort((a, b) => {
+        const rozdilNove = Number(idNove.has(b.id)) - Number(idNove.has(a.id));
+        return rozdilNove || b.hodnoceno.localeCompare(a.hodnoceno);
+      });
+      serazene.forEach((n) => {
+        const skupina = skupinyPrvky[n.verdikt];
+        if (!skupina) return;
+        const prvek = vytvorKartu(n, idNove.has(n.id));
+        skupina.seznam.append(prvek);
+        karty.push({ prvek, nabidka: n });
+      });
+    }
+
+    /* ---------- Aktualizace zobrazení (filtr, skrývání, počty) ---------- */
+    function aktualizuj() {
+      const pocty = { KOUPIT: 0, "ZVÁŽIT": 0, NEKUPOVAT: 0 };
+
+      karty.forEach(({ prvek, nabidka: n }) => {
+        const jeSkryta = stav.skryte.has(n.id);
+        const odpovidaFiltru = stav.kategorie === "vse" || n.kategorie === stav.kategorie;
+        const viditelna = odpovidaFiltru && (stav.ukazSkryte || !jeSkryta);
+        prvek.hidden = !viditelna;
+        prvek.classList.toggle("karta--skryta", jeSkryta);
+        prvek.querySelector(".tlacitko-skryt").textContent = jeSkryta ? "Vrátit zpět" : "Skrýt";
+        if (viditelna && !jeSkryta) pocty[n.verdikt]++;
+      });
+
+      // Počty ve skupinách (počítají se i skryté karty, když se zobrazují)
+      SKUPINY.forEach((s) => {
+        const ref = skupinyPrvky[s.verdikt];
+        const viditelnych = karty.filter((k) => k.nabidka.verdikt === s.verdikt && !k.prvek.hidden).length;
+        ref.pocet.textContent = `(${viditelnych})`;
+        ref.prazdno.hidden = viditelnych > 0;
+      });
+
+      // Souhrn „pod tím menším“: kolik se právě zobrazuje
+      const celkem = pocty.KOUPIT + pocty["ZVÁŽIT"] + pocty.NEKUPOVAT;
+      const skrytychCelkem = [...stav.skryte].filter((id) => DATA.nabidky.some((n) => n.id === id)).length;
+      document.getElementById("celkem-info").textContent =
+        `Zobrazeno celkem: ${celkem} (KOUPIT ${pocty.KOUPIT} · ZVÁŽIT ${pocty["ZVÁŽIT"]} · NEKUPOVAT ${pocty.NEKUPOVAT})` +
+        ` · starší než ${DATA.maxDni} dní se mažou`;
+
+      const prepinac = document.getElementById("prepinac-skryte");
+      prepinac.hidden = skrytychCelkem === 0;
+      prepinac.textContent = stav.ukazSkryte ? "Schovat skryté" : `Skryté: ${skrytychCelkem} (zobrazit)`;
+
+      document.querySelectorAll(".filtr button[data-filtr]").forEach((b) => {
+        b.setAttribute("aria-pressed", String(b.dataset.filtr === stav.kategorie));
+      });
+    }
+
+    /* ---------- Souhrn nahoře: nové nabídky z posledního běhu ---------- */
+    function vykresliSouhrnNovych() {
+      const beh = DATA.posledniBeh;
+      document.getElementById("posledni-beh").textContent = beh
+        ? `Poslední běh: ${formatujDatum(beh.zacatek)} · Apify vrátilo ${beh.nalezeno} nabídek`
+        : "Zatím neproběhl žádný běh.";
+
+      const nove = DATA.nabidky.filter((n) => idNove.has(n.id));
+      document.getElementById("nove-pocet").textContent = nove.length;
+      const rozpis = document.getElementById("nove-rozpis");
+      SKUPINY.forEach((s) => {
+        const pocet = nove.filter((n) => n.verdikt === s.verdikt).length;
+        rozpis.append(el("span", "stitek " + s.trida, `${s.verdikt} ${pocet}`));
+      });
+    }
+
+    /* ---------- Ovládání ---------- */
+    document.querySelectorAll(".filtr button[data-filtr]").forEach((b) => {
+      b.addEventListener("click", () => { stav.kategorie = b.dataset.filtr; aktualizuj(); });
+    });
+    document.getElementById("prepinac-skryte").addEventListener("click", () => {
+      stav.ukazSkryte = !stav.ukazSkryte;
+      aktualizuj();
+    });
+
+    /* ---------- Start ---------- */
+    vykresliSouhrnNovych();
+    postavStranku();
+    aktualizuj();
+  </script>
+</body>
+</html>

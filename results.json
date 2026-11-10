@@ -1,0 +1,682 @@
+[
+  {
+    "id": "10747943333",
+    "kategorie": "bundy",
+    "nazev": "kurtka puchowa haglofs l zolta lekka pikowana z kapturem trekking outdoor bdb",
+    "url": "https://www.vinted.cz/items/10747943333-kurtka-puchowa-haglofs-l-zolta-lekka-pikowana-z-kapturem-trekking-outdoor-bdb",
+    "cena_celkem": "1669.13 CZK",
+    "stav": {
+      "status_id": 2,
+      "limit_ceny_pct": 60
+    },
+    "navrzeny_verdikt": "ZVÁŽIT",
+    "verdikt": "ZVÁŽIT",
+    "upraveno_kodem": [],
+    "duvody": [
+      "Stáří modelu nelze spolehlivě určit, péřová izolace bez údajů o plnivosti a sezóně.",
+      "Chybí fotky štítku, zipů, manžet a podpaží a popis neobsahuje žádnou informaci.",
+      "Na fotkách jsou viditelné nerovnoměrné komory a pomačkaný materiál, stav je třeba ověřit."
+    ],
+    "podrobnosti": {
+      "typ_izolace": "péřová",
+      "stari_modelu": {
+        "odhad": "zhruba 2018–2022, nelze určit přesně",
+        "od_let": 3,
+        "do_let": 8,
+        "jistota": "nejisté",
+        "z_ceho": "Podle designu (diagonální prošití, hořčicová barva, stará varianta loga Haglöfs) vypadá jako model řady L.I.M / Essens Down Hood, ale bez štítku a data výroby nelze určit sezónu."
+      },
+      "cena_nove": {
+        "od_kc": 3500,
+        "do_kc": 6000,
+        "jistota": "nejisté",
+        "z_ceho": "Odhad podle běžné ceny lehkých péřových bund Haglöfs s kapucí; přesný model neznámý, proto je odhad nejistý.",
+        "pomer_ceny": {
+          "cena_celkem_kc": 1669.13,
+          "pri_dolni_mezi_pct": 48,
+          "pri_horni_mezi_pct": 28
+        }
+      },
+      "izolace_material": "Polyester, peří (z údajů inzerátu). Plnivost (FP), poměr peří a certifikace (RDS apod.): neuvedeno. Gramáž a přesné složení: neuvedeno.",
+      "stav_podle_fotek": "Bunda působí celkově zachovale, bez viditelných děr, skvrn či poškozených zipů. Prošité komory jsou ale nerovnoměrně vyplněné a materiál je silně pomačkaný, především na rukávech a bocích; v dolní části zad a na rukávech jsou patrné slehlé partie. Na fotkách lze vidět drobné tmavší skvrny na látce u loga, což může být jen odlesk nebo znečištění. Prodávající uvádí 'bdb' (velmi dobrý) – odpovídá zhruba, bez rozporu.",
+      "chybejici_fotky": [
+        "štítek se složením, velikostí a datem výroby",
+        "detail zipů (hlavní i kapsy)",
+        "detail manžet a lemů",
+        "detail podpaží a límce/kapuce zevnitř",
+        "fotka bundy při prosvětlení/ve stlačeném stavu pro posouzení plnivosti"
+      ],
+      "prodavajici": "snipmaster, hodnocení 4,9/5 při 402 recenzích – velmi důvěryhodný. Popis je prázdný (pouze '$162'), žádné údaje o věci; nabídka je z Polska (název v polštině) a prodejce může být větší přeprodejce, takže historie bundy nemusí být známá.",
+      "otazky_na_prodavajiciho": [
+        "Z jaké sezóny bunda je a kdy byla koupena?",
+        "Jaká je plnivost a poměr peří uvedené na štítku?",
+        "Jak často a k čemu se bunda nosila?",
+        "Můžete poslat fotky štítku uvnitř a detaily zipů, manžet a podpaží?",
+        "Jsou všechny komory plné, neuniká peří, nejsou propadlá místa?",
+        "Jaké jsou rozměry (šířka v podpaží, délka)?"
+      ]
+    },
+    "model": "claude-sonnet-5-5",
+    "pouziti": {
+      "effort": "medium",
+      "input_tokens": 9839,
+      "output_tokens": 1125,
+      "pokusu": 1
+    },
+    "hodnoceno": "2026-11-10T14:25:35.539Z",
+    "foto": "https://images1.vinted.net/t/06_01d9f_ALC8GbtVdCCtBGjtY9atNHXf/f800/4b409693.webp?s=333620bb7a3ca74a77a912b5c6a503e7025e7f6b",
+    "beh_id": null
+  },
+  {
+    "id": "10739904502",
+    "kategorie": "bundy",
+    "nazev": "Haglöfs bivvy parka down",
+    "url": "https://www.vinted.cz/items/10739904502-haglofs-bivvy-parka-down",
+    "cena_celkem": "2319.87 CZK",
+    "stav": {
+      "status_id": 2,
+      "limit_ceny_pct": 60
+    },
+    "navrzeny_verdikt": "ZVÁŽIT",
+    "verdikt": "NEKUPOVAT",
+    "upraveno_kodem": [
+      {
+        "pravidlo": "stari_nad_6_let",
+        "z": "ZVÁŽIT",
+        "na": "NEKUPOVAT",
+        "poznamka": "Stáří 7–13 let, i dolní odhad je nad 6 let."
+      }
+    ],
+    "duvody": [
+      "Model Bivvy Parka je starší a stáří péřové izolace nelze spolehlivě určit.",
+      "Popis neobsahuje žádné konkrétní informace o věci, chybí složení, plnivost i stáří.",
+      "Fotky nevykazují zjevné vady, ale chybí detaily zipů, podpaží a vnitřního štítku."
+    ],
+    "podrobnosti": {
+      "typ_izolace": "péřová",
+      "stari_modelu": {
+        "odhad": "zhruba 2012–2018, nelze určit přesně",
+        "od_let": 7,
+        "do_let": 13,
+        "jistota": "nejisté",
+        "z_ceho": "Název Bivvy Parka down a starší podoba loga Haglöfs s kapucí a žlutým vnitřkem odpovídají starším kolekcím. Model se v nabídce Haglöfs už delší dobu nevyskytuje, přesný rok ale bez štítku nelze určit."
+      },
+      "cena_nove": {
+        "od_kc": 4500,
+        "do_kc": 7000,
+        "jistota": "nejisté",
+        "z_ceho": "Odhad podle ceny dámských péřových parek Haglöfs v době prodeje modelu. Přesná původní cena není známa.",
+        "pomer_ceny": {
+          "cena_celkem_kc": 2319.87,
+          "pri_dolni_mezi_pct": 52,
+          "pri_horni_mezi_pct": 33
+        }
+      },
+      "izolace_material": "Materiál neuvedeno. Z názvu vyplývá péřová izolace (down). Plnivost, poměr peří, certifikace RDS/TDS a složení: neuvedeno. Popis obsahuje jen text '$160', žádnou konkrétní informaci.",
+      "stav_podle_fotek": "Bunda vypadá celkově zachovale, bez viditelných děr, skvrn nebo výraznějšího opotřebení. Komory jsou na fotkách rozložené docela rovnoměrně, drobné záhyby jsou běžné. Na přední straně u spodního lemu se místy objevuje drobná skvrnka či prachové zabarvení, na jednom místě na hrudi drobná světlá šmouha. Detail manžety ukazuje v pořádku vnitřní lem. Rozpor se stavem 'velmi dobrý' nevidím, ale hlavní zip, kapsy a podpaží nejsou zblízka vidět.",
+      "chybejici_fotky": [
+        "Vnitřní štítek se složením, rokem výroby a péčí",
+        "Detail hlavního zipu a zipů kapes",
+        "Podpaží",
+        "Límec a vnitřní strana kapuce zblízka",
+        "Spodní lem a stahování",
+        "Fotka naplnění komor proti světlu",
+        "Rozměry (délka, šířka v ramenou a v hrudníku)"
+      ],
+      "prodavajici": "jordi.92, hodnocení 4.9/5 při 700 recenzích, tedy velmi důvěryhodný prodejce. Popis je ale prakticky prázdný ('$160'), takže o historii věci toho asi mnoho neví nebo ji nesděluje.",
+      "otazky_na_prodavajiciho": [
+        "Z jaké sezóny bunda je a kdy byla koupena?",
+        "Můžete poslat fotku vnitřního štítku se složením a údajem o plnivosti peří?",
+        "Jak často a k čemu se bunda nosila?",
+        "Má bunda nějaké vady, např. vylézání peří, opravené díry, povolené lepení pásek či zipů?",
+        "Můžete doplnit fotky zipů, podpaží a límce zblízka?",
+        "Jaké jsou rozměry (délka, šířka v hrudníku)? Odpovídá velikost opravdu L / 40?"
+      ]
+    },
+    "model": "claude-sonnet-5-5",
+    "pouziti": {
+      "effort": "medium",
+      "input_tokens": 9806,
+      "output_tokens": 1199,
+      "pokusu": 1
+    },
+    "hodnoceno": "2026-11-10T14:25:47.203Z",
+    "foto": "https://images1.vinted.net/t/01_01654_ZX5HWJt3Kq85LUr2fBr4rUkt/f800/6baff3de.webp?s=97fddc69b7e00aab1ff7e5f5097b5888025388da",
+    "beh_id": null
+  },
+  {
+    "id": "10736151727",
+    "kategorie": "bundy",
+    "nazev": "Haglöfs PROOF black technical shell jacket women L",
+    "url": "https://www.vinted.cz/items/10736151727-haglofs-proof-black-technical-shell-jacket-women-l",
+    "cena_celkem": "2376.75 CZK",
+    "stav": {
+      "status_id": 1,
+      "limit_ceny_pct": 80
+    },
+    "navrzeny_verdikt": "ZVÁŽIT",
+    "verdikt": "ZVÁŽIT",
+    "upraveno_kodem": [],
+    "duvody": [
+      "Jde o skořepinovou bundu bez zjištěné izolace, mimo pravidla pro péřové a syntetické bundy.",
+      "Model Proof je z nedávných kolekcí a fotky ukazují velmi dobrý stav bez viditelných vad.",
+      "Chybí složení materiálu a detailní fotky vnitřku, podpaží a manžet."
+    ],
+    "podrobnosti": {
+      "typ_izolace": "bez izolace",
+      "stari_modelu": {
+        "odhad": "zhruba 2020–2023 (řada Proof/Proof Eco)",
+        "od_let": 2,
+        "do_let": 6,
+        "jistota": "nejisté",
+        "z_ceho": "Logo Haglöfs, nášivka PROOF na rukávu a střih odpovídají novějším kolekcím. Přesnou sezónu ani štítek s datem na fotkách nevidím."
+      },
+      "cena_nove": {
+        "od_kc": 6000,
+        "do_kc": 10000,
+        "jistota": "nejisté",
+        "z_ceho": "Odhad podle cen technických shellových bund Haglöfs řady Proof. Přesný model a jeho aktuální cena nejsou jisté.",
+        "pomer_ceny": {
+          "cena_celkem_kc": 2376.75,
+          "pri_dolni_mezi_pct": 40,
+          "pri_horni_mezi_pct": 24
+        }
+      },
+      "izolace_material": "Izolace neuvedena. Materiál neuveden, štítek s ním na fotkách chybí. Popis zmiňuje síťovinou podšitý vnitřek a lehkou konstrukci. Na rukávu je nášivka PROOF a nejspíš logo Gore-Tex, hashtagy zmiňují goretex.",
+      "stav_podle_fotek": "Bunda vypadá velmi čistě a bez viditelných vad: žádné skvrny, oděrky ani poškozené zipy. Švy a zipy jsou v pořádku, kapsy i manžety na suchý zip vypadají dobře. Stav „nový bez visačky“ je podle fotek věrohodný, vnitřek ale nevidíme. Popis „10/10“ je obecný.",
+      "chybejici_fotky": [
+        "štítek se složením a velikostí",
+        "štítek s datem výroby nebo sezónou",
+        "vnitřek bundy (podšívka, lepené švy)",
+        "podpaží a manžety zblízka",
+        "kapuce zevnitř"
+      ],
+      "prodavajici": "Hodnocení 4.8/5 při 176 recenzích, tedy důvěryhodný prodejce. Hashtagy a šablonovitý popis mohou ukazovat na prodejce s větším počtem inzerátů, takže nemusí znát historii věci.",
+      "otazky_na_prodavajiciho": [
+        "Z jaké sezóny bunda je a kdy byla koupena?",
+        "Jaké je přesné složení materiálu a jde opravdu o membránu Gore-Tex?",
+        "Byla bunda někdy nošená nebo prala se? Můžete poslat foto štítků a vnitřku?",
+        "Jsou lepené švy a zipy bez povolování? Můžete poslat foto podpaží a manžet?",
+        "Jaké jsou rozměry (šířka v podpaží, délka)? Bunda je dámská L, zda sedí na velikost L / 40."
+      ]
+    },
+    "model": "claude-sonnet-5-5",
+    "pouziti": {
+      "effort": "medium",
+      "input_tokens": 9971,
+      "output_tokens": 1060,
+      "pokusu": 1
+    },
+    "hodnoceno": "2026-11-10T14:25:57.706Z",
+    "foto": "https://images1.vinted.net/t/05_00526_YRTgWPdWBgE9BiCC9NYBZegx/f800/100a4df2.webp?s=64406d0330cfd20d0ac0fb37489da9253f0f9747",
+    "beh_id": null
+  },
+  {
+    "id": "10684652198",
+    "kategorie": "bundy",
+    "nazev": "Haglofs kurtka puchowa sztuczny puch zimowa damska rozmiar L mimic z kapturem granatowa v068",
+    "url": "https://www.vinted.cz/items/10684652198-haglofs-kurtka-puchowa-sztuczny-puch-zimowa-damska-rozmiar-l-mimic-z-kapturem-granatowa-v068",
+    "cena_celkem": "2076.01 CZK",
+    "stav": {
+      "status_id": 1,
+      "limit_ceny_pct": 80
+    },
+    "navrzeny_verdikt": "ZVÁŽIT",
+    "verdikt": "ZVÁŽIT",
+    "upraveno_kodem": [],
+    "duvody": [
+      "Typ izolace je syntetický (\"sztuczny puch\"), ale gramáž ani název izolace nejsou uvedeny.",
+      "Stáří modelu nelze určit, na fotkách je nová bunda s visačkou, ale chybí fotka štítku se sezónou.",
+      "Jde o dámský střih (\"damska\"), rozměry odpovídají L, ale je nutné ověřit, zda sedí."
+    ],
+    "podrobnosti": {
+      "typ_izolace": "syntetická",
+      "stari_modelu": {
+        "odhad": "nelze určit; model Mimic Hood je v nabídce Haglöfs asi od 2021–2022",
+        "od_let": 1,
+        "do_let": 5,
+        "jistota": "nejisté",
+        "z_ceho": "Podle designu (prošívané komory, malé logo H na hrudi a na zádech) a názvu Mimic. Na fotkách není štítek se sezónou ani kód výrobku, takže přesné stáří nelze potvrdit. Prodávající tvrdí, že je bunda nová s visačkou."
+      },
+      "cena_nove": {
+        "od_kc": 3500,
+        "do_kc": 6000,
+        "jistota": "nejisté",
+        "z_ceho": "Syntetická zimní bunda Haglöfs s kapucí, odhad podle běžných cen podobných modelů (Mimic Hood). Přesnou aktuální cenu neznám, proto je odhad široký.",
+        "pomer_ceny": {
+          "cena_celkem_kc": 2076.01,
+          "pri_dolni_mezi_pct": 59,
+          "pri_horni_mezi_pct": 35
+        }
+      },
+      "izolace_material": "Izolace: syntetická (\"sztuczny puch\"), název izolace i gramáž neuvedeny. Složení materiálu ve Vinted údajích neuvedeno, štítek se složením na fotkách není. Rozměry z popisu: délka 70 cm, šířka v podpaží 57 cm (tj. obvod hrudi cca 114 cm), rukáv 70 cm.",
+      "stav_podle_fotek": "Bunda vypadá jako nová, bez viditelných skvrn, děr, žmolků nebo poškození. Komory jsou rovnoměrně nafouknuté. Na fotkách je visačka Haglöfs, takže stav odpovídá nebo je lepší, než uvádí Vinted (\"Nový bez visačky\", ale popis i fotky ukazují novou s visačkou) – nepřesnost inzerátu, spíš dobrá zpráva.",
+      "chybejici_fotky": [
+        "Štítek se složením a izolací",
+        "Štítek s rokem výroby/sezónou nebo kódem produktu",
+        "Detail zipů (hlavní zip, kapsy)",
+        "Detail manžet a kapuce zevnitř",
+        "Vnitřní strana bundy"
+      ],
+      "prodavajici": "lunara00, hodnocení 5/5, 26 recenzí – dobré hodnocení, ale počet recenzí je střední. Popis je polsky a stručný, obsahuje jen velikost a rozměry. Název může naznačovat, že jde o prodejce s více kusy, riziko mírné.",
+      "otazky_na_prodavajiciho": [
+        "Z jaké sezóny bunda je a kdy byla koupena?",
+        "Jaká je izolace (název, gramáž) a jaké je přesné složení materiálu podle štítku?",
+        "Můžete poslat fotku štítku uvnitř bundy?",
+        "Je bunda opravdu nová a nenošená, jak uvádíte, nebo byla někdy zkoušená či prána?",
+        "Je bunda původně dámská? Odpovídá střih velikosti L / 40?"
+      ]
+    },
+    "model": "claude-sonnet-5-5",
+    "pouziti": {
+      "effort": "medium",
+      "input_tokens": 10962,
+      "output_tokens": 1189,
+      "pokusu": 1
+    },
+    "hodnoceno": "2026-11-10T14:26:09.303Z",
+    "foto": "https://images1.vinted.net/t/02_005fa_jf3MNM3VcKG84psYVXweyxQW/f800/56a51210.webp?s=e4fd2f1df8ab671964be06940fda0b7f267bebe7",
+    "beh_id": null
+  },
+  {
+    "id": "10675470051",
+    "kategorie": "bundy",
+    "nazev": "Haglofs Bivvy II L kurtka puchowa",
+    "url": "https://www.vinted.cz/items/10675470051-haglofs-bivvy-ii-l-kurtka-puchowa",
+    "cena_celkem": "1079.43 CZK",
+    "stav": {
+      "status_id": 2,
+      "limit_ceny_pct": 60
+    },
+    "navrzeny_verdikt": "ZVÁŽIT",
+    "verdikt": "NEKUPOVAT",
+    "upraveno_kodem": [
+      {
+        "pravidlo": "stari_nad_6_let",
+        "z": "ZVÁŽIT",
+        "na": "NEKUPOVAT",
+        "poznamka": "Stáří 7–12 let, i dolní odhad je nad 6 let."
+      }
+    ],
+    "duvody": [
+      "Stáří modelu Bivvy II nelze přesně určit a může být na hraně 4–6 let, péřová izolace je na stáří citlivá.",
+      "Stav ze čtyř fotek vypadá dobře, ale chybí detaily manžet, zipů, podpaží a límce.",
+      "Prodávající je spolehlivý a popis obsahuje konkrétní rozměry a složení výplně."
+    ],
+    "podrobnosti": {
+      "typ_izolace": "péřová",
+      "stari_modelu": {
+        "odhad": "zhruba 2014–2018, nelze určit přesně",
+        "od_let": 7,
+        "do_let": 12,
+        "jistota": "nejisté",
+        "z_ceho": "Název Bivvy II, starší podoba loga a štítku Haglöfs WOMEN s růžovými prvky a Pertex Classic Eco. Rok výroby ani sezóna na fotkách ani v popisu nejsou, odhad je jen orientační podle modelu a vzhledu."
+      },
+      "cena_nove": {
+        "od_kc": 3500,
+        "do_kc": 5500,
+        "jistota": "nejisté",
+        "z_ceho": "Odhad podle běžné doporučené ceny dámských lehkých péřových bund Haglöfs té doby (Bivvy). Model se už nejspíš nevyrábí, přesnou původní cenu neznám.",
+        "pomer_ceny": {
+          "cena_celkem_kc": 1079.43,
+          "pri_dolni_mezi_pct": 31,
+          "pri_horni_mezi_pct": 20
+        }
+      },
+      "izolace_material": "Peří/puch 90/10 (podle popisu). Vrchní materiál Pertex Classic Eco (podle fotek). Plnivost (FP) neuvedena, certifikace (RDS/TDS) neuvedena, gramáž neuvedena. Stažení v dolním lemu. Rozměry: délka 65 cm, šířka pod podpažím 54 cm, šířka dole 56 cm, rukáv zvenku od límce 77 cm, vnitřní rukáv 59 cm (+/- 1–2 cm).",
+      "stav_podle_fotek": "Bunda vypadá na fotkách čistě a bez viditelných skvrn, děr nebo vylézajícího peří. Komory se zdají rovnoměrně vyplněné, bez viditelného splasknutí. Detaily zipů, manžet, límce a podpaží nejsou dobře vidět. Stav „velmi dobrý“ z fotek neodporuje, ale nelze ho plně ověřit. Je to dámský střih (štítek L WOMEN), rozměry odpovídají spíše menšímu střihu než pánskému L.",
+      "chybejici_fotky": [
+        "detail manžet",
+        "detail límce a podpaží",
+        "detail zipů hlavního i kapes",
+        "vnitřek bundy v protisvětle pro kontrolu rozložení peří",
+        "záda a rukávy zezadu"
+      ],
+      "prodavajici": "coreytrevorson, hodnocení 4,9/5 s 581 recenzemi, tedy velmi důvěryhodný. Pravděpodobně zkušený prodejce, který nemusí znát historii kusu. Nabídka je z Polska (popis polsky).",
+      "otazky_na_prodavajiciho": [
+        "Z jaké sezóny/roku bunda je a kdy byla koupena?",
+        "Jak často a k čemu se nosila a jak se prala?",
+        "Jsou zipy, manžety a lem bez poškození a nepovoluje lepidlo na páskách či zipech?",
+        "Můžete poslat detailní fotky podpaží, manžet, límce a zipů?",
+        "Je uvedena plnivost peří (FP) a certifikace RDS?",
+        "Jak sedí střih, protože štítek je WOMEN L?"
+      ]
+    },
+    "model": "claude-sonnet-5-5",
+    "pouziti": {
+      "effort": "medium",
+      "input_tokens": 9942,
+      "output_tokens": 1221,
+      "pokusu": 1
+    },
+    "hodnoceno": "2026-11-10T14:26:22.199Z",
+    "foto": "https://images1.vinted.net/t/02_01d85_EPHsS46dv3qVQUxwnKqxAryC/f800/788737a1.webp?s=d8fc309cc7017ac40759ac8cb94ee413f26479df",
+    "beh_id": null
+  },
+  {
+    "id": "10746595994",
+    "kategorie": "merino",
+    "nazev": "Bluza Icebreaker Merino dama L",
+    "url": "https://www.vinted.cz/items/10746595994-bluza-icebreaker-merino-dama-l",
+    "cena_celkem": "937.85 CZK",
+    "stav": {
+      "status_id": 2,
+      "limit_ceny_pct": 60
+    },
+    "navrzeny_verdikt": "ZVÁŽIT",
+    "verdikt": "ZVÁŽIT",
+    "upraveno_kodem": [],
+    "duvody": [
+      "Materiál je podle štítku 100% merino vlna, takže splňuje požadavek na přírodní vlákna.",
+      "Chybí detailní fotky manžet, podpaží a lemu, kde se nejčastěji objevují díry od molů a prošoupání.",
+      "Popis prodávajícího je generický a neobsahuje žádné konkrétní informace o kusu; prodejce zřejmě nabízí více kusů."
+    ],
+    "podrobnosti": {
+      "stari_modelu": {
+        "odhad": "pravděpodobně 2–5 let",
+        "od_let": 2,
+        "do_let": 5,
+        "jistota": "pravděpodobné",
+        "z_ceho": "Štítek s černo-oranžovým designem a označením Bodyfit 200 odpovídá novější generaci výrobku; přesnou sezónu z fotek nelze určit (štítek bez data výroby)."
+      },
+      "cena_nove": {
+        "od_kc": 2100,
+        "do_kc": 2700,
+        "jistota": "pravděpodobné",
+        "z_ceho": "Odhad maloobchodní ceny dámského Icebreaker Merino 200 Bodyfit trička s dlouhým rukávem v ČR; přibližný odhad podle obvyklých cen modelu.",
+        "pomer_ceny": {
+          "cena_celkem_kc": 937.85,
+          "pri_dolni_mezi_pct": 45,
+          "pri_horni_mezi_pct": 35
+        }
+      },
+      "izolace_material": "Izolace neuvedena, jde o tričko. Materiál podle štítku: 100% vlna (wool), bez dekorace. Gramáž 200 g/m² dle označení modelu.",
+      "stav_podle_fotek": "Na dostupných fotkách vypadá tričko čistě, bez viditelných skvrn, děr ani zplstění. Fotky jsou z více úhlů, ale nejsou dost detailní na kontrolu drobných děr od molů. Stav odpovídá kategorii velmi dobrý.",
+      "chybejici_fotky": [
+        "Detail podpaží",
+        "Detail manžet rukávů",
+        "Detail spodního lemu",
+        "Detail límce",
+        "Fotka v protisvětle nebo zblízka na místa pro díry od molů"
+      ],
+      "prodavajici": "Prodávající raul30061980, hodnocení 5/5, 355 recenzí. Vysoký počet recenzí je pozitivní. Popis je generický a v rumunštině, což může naznačovat přeprodávání většího množství kusů.",
+      "otazky_na_prodavajiciho": [
+        "Můžete poslat detailní fotky podpaží, manžet a lemu?",
+        "Nejsou na tričku žádné díry od molů nebo prošoupaná místa?",
+        "Jaké jsou přesné rozměry (šířka v podpaží, délka)?",
+        "Z jaké sezóny kus pochází nebo kdy byl koupen?"
+      ],
+      "prirodna_vlakna_pct": 100
+    },
+    "model": "claude-haiku-5-5",
+    "pouziti": {
+      "effort": "medium",
+      "input_tokens": 9851,
+      "output_tokens": 2121,
+      "pokusu": 1
+    },
+    "hodnoceno": "2026-11-10T14:26:41.377Z",
+    "foto": "https://images1.vinted.net/t/06_0112d_fMcjCCkQZuvZrtck1HFet4Y3/f800/07181053.webp?s=13e28eb37cb729adb5dd3a42fed1b2d66e6bf561",
+    "beh_id": null
+  },
+  {
+    "id": "10731543185",
+    "kategorie": "merino",
+    "nazev": "Bluzka Helly Hansen 57% merino wool",
+    "url": "https://www.vinted.cz/items/10731543185-bluzka-helly-hansen-57-merino-wool",
+    "cena_celkem": "371.81 CZK",
+    "stav": {
+      "status_id": 2,
+      "limit_ceny_pct": 60
+    },
+    "navrzeny_verdikt": "NEKUPOVAT",
+    "verdikt": "NEKUPOVAT",
+    "upraveno_kodem": [],
+    "duvody": [
+      "Uvedené složení je jen 57 % merina a zbytek není specifikován, takže nelze prokázat požadovaných minimálně 80 % přírodních vláken.",
+      "Značka je uvedena jako Kari Traa, ale název zní Helly Hansen, což je nesrovnalost v inzerátu.",
+      "Stav na fotkách vypadá dobře bez zjevných děr, ale detailní fotky podpaží, manžet a vnitřního štítku chybí."
+    ],
+    "podrobnosti": {
+      "stari_modelu": {
+        "odhad": "nelze určit",
+        "od_let": null,
+        "do_let": null,
+        "jistota": "nejisté",
+        "z_ceho": "Na fotkách není štítek s datem ani sezónou a model ve výbavě značek nelze spolehlivě datovat."
+      },
+      "cena_nove": {
+        "od_kc": 1000,
+        "do_kc": 1600,
+        "jistota": "nejisté",
+        "z_ceho": "Odhad podle běžných cen funkčního merino/syntetického zip-neck trika této kategorie; přesný model ani aktuální cena nejsou známy.",
+        "pomer_ceny": {
+          "cena_celkem_kc": 371.81,
+          "pri_dolni_mezi_pct": 37,
+          "pri_horni_mezi_pct": 23
+        }
+      },
+      "izolace_material": "Vrchní materiál: 57 % merino wool (uvedeno na fotce). Zbytek složení neuveden. Jde o úpletový funkční spodní díl, izolace se nevztahuje.",
+      "stav_podle_fotek": "Bez viditelných děr, žmolků nebo zplstění. Barva je místy mírně vybledlá, zip vypadá funkčně. Rozměry prodávající uvedl (šířka pod pažemi 41, délka 64, délka rukávu 57), což odpovídá velikosti L. Drobné nedostatky na detailních fotkách nelze s jistotou vyloučit.",
+      "chybejici_fotky": [
+        "Detail štítku se složením a údaji o výrobci",
+        "Podpaží a místa pod rukávy",
+        "Manžety rukávů",
+        "Detail zipu a límce",
+        "Záběr proti světlu na případné díry od molů"
+      ],
+      "prodavajici": "xjulciaakx, hodnocení 5/5 z 374 recenzí, zavedený účet. Popis obsahuje jen rozměry, bez informací o používání a stavu. Rozpor v názvu a značce (Helly Hansen vs. Kari Traa).",
+      "otazky_na_prodavajiciho": [
+        "Jaká je přesná značka a model (Helly Hansen, nebo Kari Traa)?",
+        "Jaké je přesné složení kromě 57 % merina? Jde o syntetiku, nebo o přírodní vlákna?",
+        "Můžete poslat fotku štítku se složením a případně s kódem produktu nebo sezónou?",
+        "Můžete poslat detail podpaží, manžet a záběr proti světlu kvůli molům?",
+        "Jak často a k jakému účelu bylo triko používáno?"
+      ],
+      "prirodna_vlakna_pct": null
+    },
+    "model": "claude-haiku-5-5",
+    "pouziti": {
+      "effort": "medium",
+      "input_tokens": 9712,
+      "output_tokens": 2103,
+      "pokusu": 1
+    },
+    "hodnoceno": "2026-11-10T14:26:53.842Z",
+    "foto": "https://images1.vinted.net/t/03_00ad1_zsg46YiugjdM1rvfsH9gbgYU/f800/3ab6e641.webp?s=94648972b06edf330b6ed7bf1c3ea5ec96573e81",
+    "beh_id": null
+  },
+  {
+    "id": "10731102050",
+    "kategorie": "merino",
+    "nazev": "Stormberg L bluzka termiczna Merino",
+    "url": "https://www.vinted.cz/items/10731102050-stormberg-l-bluzka-termiczna-merino",
+    "cena_celkem": "460.27 CZK",
+    "stav": {
+      "status_id": 2,
+      "limit_ceny_pct": 60
+    },
+    "navrzeny_verdikt": "NEKUPOVAT",
+    "verdikt": "NEKUPOVAT",
+    "upraveno_kodem": [],
+    "duvody": [
+      "Podle štítku je merino pouze cca 30 %, což je výrazně pod požadovaným minimem 80 % přírodních vláken.",
+      "Hlavní složkou je polyester (cca 50 %), takže nejde o přírodní merino kus.",
+      "Stav na fotkách vypadá dobře, ale nemůže vyvážit nevyhovující složení."
+    ],
+    "podrobnosti": {
+      "stari_modelu": {
+        "odhad": "nelze určit",
+        "od_let": null,
+        "do_let": null,
+        "jistota": "nejisté",
+        "z_ceho": "Na fotkách ani ve štítku není datum výroby ani sezóna; model podle fotek nelze spolehlivě datovat."
+      },
+      "cena_nove": {
+        "od_kc": 900,
+        "do_kc": 1500,
+        "jistota": "nejisté",
+        "z_ceho": "Odhad orientační pro dlouhý rukáv Stormberg z merino směsi; aktuální cena nebyla v zadání uvedena a model se nepodařilo ověřit.",
+        "pomer_ceny": {
+          "cena_celkem_kc": 460.27,
+          "pri_dolni_mezi_pct": 51,
+          "pri_horni_mezi_pct": 31
+        }
+      },
+      "izolace_material": "Bez izolace. Štítek čitelně uvádí merino vlnu (cca 30 %) a polyester (cca 50 %); zbytek složení na fotce není čitelný, neuvedeno.",
+      "stav_podle_fotek": "Na fotkách nejsou vidět žmolky, díry ani prošoupání v podpaží a na manžetách. Barva je rovnoměrná. Stav odpovídá údaji Velmi dobrý.",
+      "chybejici_fotky": [
+        "Detail podpaží a zadní části",
+        "Detail vnitřních švů a lemu",
+        "Detail celého štítku se složením"
+      ],
+      "prodavajici": "Hodnocení 4.9/5 z 1324 recenzí, silný a důvěryhodný prodejce. Popis je stručný a obsahuje hlavně materiálové údaje, které se ale neshodují se štítkem (uvádí čistě merino vlnu).",
+      "otazky_na_prodavajiciho": [
+        "Můžete potvrdit přesné složení z etikety, včetně zbytku 20 %?",
+        "Je na zadní straně nebo v podpaží nějaké poškození nebo žmolky?"
+      ],
+      "prirodna_vlakna_pct": 30
+    },
+    "model": "claude-haiku-5-5",
+    "pouziti": {
+      "effort": "medium",
+      "input_tokens": 9242,
+      "output_tokens": 1646,
+      "pokusu": 1
+    },
+    "hodnoceno": "2026-11-10T14:27:02.728Z",
+    "foto": "https://images1.vinted.net/t/06_01ddb_PqS8FxP9LD5ByztxeYyymeNb/f800/098c2076.webp?s=b01e085d9badb99394a882cd1fdb2a24d2d14a59",
+    "beh_id": null
+  },
+  {
+    "id": "10727529322",
+    "kategorie": "merino",
+    "nazev": "Bluzka merino Wool L w paski",
+    "url": "https://www.vinted.cz/items/10727529322-bluzka-merino-wool-l-w-paski",
+    "cena_celkem": "94.66 CZK",
+    "stav": {
+      "status_id": 2,
+      "limit_ceny_pct": 60
+    },
+    "navrzeny_verdikt": "ZVÁŽIT",
+    "verdikt": "ZVÁŽIT",
+    "upraveno_kodem": [],
+    "duvody": [
+      "Cena je výrazně pod horní hranicí pro velmi dobrý stav a materiál je podle štítku 100% merino.",
+      "Na fotkách je u středu předního dílu drobné světlejší místo, které může být díra od molů nebo žmolek, a je třeba ho ověřit.",
+      "Chybí fotky v protisvětle, detail podpaží a spodního lemu a informace o stáří kusu, takže stav nelze spolehlivě potvrdit."
+    ],
+    "podrobnosti": {
+      "stari_modelu": {
+        "odhad": "nelze určit",
+        "od_let": null,
+        "do_let": null,
+        "jistota": "nejisté",
+        "z_ceho": "Štítek neuvádí datum ani sezónu a model pruhovaného trička Next z fotek nelze časově zařadit."
+      },
+      "cena_nove": {
+        "od_kc": 700,
+        "do_kc": 1000,
+        "jistota": "nejisté",
+        "z_ceho": "Odhad vychází z orientační ceny podobného pruhovaného merino trička Next v běžném prodeji, přesná aktuální cena modelu není známa.",
+        "pomer_ceny": {
+          "cena_celkem_kc": 94.66,
+          "pri_dolni_mezi_pct": 14,
+          "pri_horni_mezi_pct": 9
+        }
+      },
+      "izolace_material": "Ze štítku: 100% MERINO WOOL, značka Next, velikost 12. Gramáž neuvedena. Popis prodávajícího neobsahuje žádné údaje o materiálu.",
+      "stav_podle_fotek": "Materiál působí čistě a pletivo je rovnoměrné, ale na fotce 4 je u středu předního dílu drobné světlejší místo nebo možná díra od molů. Na fotce 5 u podpaží nebo švu je mírné naznačení opotřebení. Při velmi dobrém stavu jsou tato místa na hranici přijatelnosti.",
+      "chybejici_fotky": [
+        "Detail v protisvětle pro ověření děr od molů",
+        "Detail podpaží a švů",
+        "Detail spodního lemu a manžet",
+        "Zadní strana trička"
+      ],
+      "prodavajici": "pinka542, hodnocení 5/5, 1047 recenzí. Vysoký počet recenzí a hodnocení je dobrý signál, ale u tak velkého objemu prodeje nelze předpokládat, že prodávající zná historii kusu. Popis je pouze „Wysyłam inpostem“ a neobsahuje žádné konkrétní informace o věci.",
+      "otazky_na_prodavajiciho": [
+        "Můžete poslat fotku předního dílu v protisvětle, abyste vyloučil díry od molů?",
+        "Můžete ukázat detail podpaží a švů?",
+        "Jak dlouho jste kus nosila a jestli byl prát v pračce nebo ručně?",
+        "Jaká je gramáž pleteniny nebo přesné složení z etikety?"
+      ],
+      "prirodna_vlakna_pct": 100
+    },
+    "model": "claude-haiku-5-5",
+    "pouziti": {
+      "effort": "medium",
+      "input_tokens": 9829,
+      "output_tokens": 2064,
+      "pokusu": 1
+    },
+    "hodnoceno": "2026-11-10T14:27:16.519Z",
+    "foto": "https://images1.vinted.net/t/04_01b74_pKDtG5vGarP3Y3tMy4Fj71n6/f800/15c32960.webp?s=da85b4272759ea5df6833bff81d9c7cdfe970e23",
+    "beh_id": null
+  },
+  {
+    "id": "10725607171",
+    "kategorie": "merino",
+    "nazev": "Karitraa L longsleeve 100% merino wool",
+    "url": "https://www.vinted.cz/items/10725607171-karitraa-l-longsleeve-100-merino-wool",
+    "cena_celkem": "778.69 CZK",
+    "stav": {
+      "status_id": 2,
+      "limit_ceny_pct": 60
+    },
+    "navrzeny_verdikt": "ZVÁŽIT",
+    "verdikt": "ZVÁŽIT",
+    "upraveno_kodem": [],
+    "duvody": [
+      "Složení je podle štítku 100 % merino, což splňuje požadavek na přírodní vlákna.",
+      "Stáří modelu nelze spolehlivě určit, protože na štítku chybí datum výroby nebo sezóna.",
+      "Na fotkách chybí detailní záběry podpaží a manžet, takže skutečný stav nelze plně ověřit."
+    ],
+    "podrobnosti": {
+      "stari_modelu": {
+        "odhad": "nelze určit přesně, pravděpodobně zhruba 2 až 10 let",
+        "od_let": 2,
+        "do_let": 10,
+        "jistota": "nejisté",
+        "z_ceho": "Na štítku chybí datum výroby a kód produktu. Logo a styl etikety odpovídají spíše novějším kolekcím, ale přesné srovnání s katalogem nebylo možné."
+      },
+      "cena_nove": {
+        "od_kc": 1000,
+        "do_kc": 1500,
+        "jistota": "nejisté",
+        "z_ceho": "Odhad aktuální doporučené ceny podobného merino dlouhého rukávu značky Kari Traa, bez ověření přesného modelu a kolekce.",
+        "pomer_ceny": {
+          "cena_celkem_kc": 778.69,
+          "pri_dolni_mezi_pct": 78,
+          "pri_horni_mezi_pct": 52
+        }
+      },
+      "izolace_material": "Bez izolace. Hlavní materiál podle štítku 100 % Merino Wool, gramáž neuvedena, pletené s barevnými vsadkami.",
+      "stav_podle_fotek": "Na fotkách nejsou viditelné díry, skvrny ani výrazné žmolky. Materiál působí celistvě. Detailní záběry podpaží, manžet a švů chybí, proto nelze vyloučit drobné opotřebení nebo díry od molů.",
+      "chybejici_fotky": [
+        "Detail podpaží",
+        "Detail manžet a spodního lemu",
+        "Záběr na švy v oblasti ramen a bočních vsadek",
+        "Fotka v protisvětle pro kontrolu děr od molů"
+      ],
+      "prodavajici": "Prodávající magicznaszafa2024 má hodnocení 5/5 a 570 recenzí, což je silný signál spolehlivosti. Popis ale neobsahuje žádnou konkrétní informaci o věci, jen obecné hodnocení stavu.",
+      "otazky_na_prodavajiciho": [
+        "Z jaké sezóny nebo roku je triko a kde je kód produktu?",
+        "Jak dlouho a jak často bylo nošeno?",
+        "Můžete poslat detailní fotky podpaží, manžet a švů?",
+        "Jaké jsou přesné rozměry (šířka v podpaží, délka)?",
+        "Jsou na materiálu nějaké díry od molů, žmolky nebo zplstění?"
+      ],
+      "prirodna_vlakna_pct": 100
+    },
+    "model": "claude-haiku-5-5",
+    "pouziti": {
+      "effort": "medium",
+      "input_tokens": 18450,
+      "output_tokens": 4130,
+      "pokusu": 2
+    },
+    "hodnoceno": "2026-11-10T14:27:40.677Z",
+    "foto": "https://images1.vinted.net/t/06_008f2_gvHxHs9ZsfeVi2sTDMqwQ8A1/f800/679b28f1.webp?s=4bdd4e6ee972a85d24f250491be847fd39db5de6",
+    "beh_id": null
+  }
+]
