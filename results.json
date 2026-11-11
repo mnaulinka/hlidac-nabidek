@@ -876,5 +876,667 @@
     "foto": "https://images1.vinted.net/t/06_007c6_qvNA5CCK1RifwmkJ7d2TRpPn/f800/a6b2ffd4.webp?s=73f8c9615831baf99575fc3d9e6ef206964cd5e7",
     "beh_id": "2026-11-11T07:55:34.344Z",
     "hodnoceno": "2026-11-11T07:56:24.904Z"
+  },
+  {
+    "id": "10761968283",
+    "kategorie": "merino",
+    "nazev": "Śliczna bluzka merino Wool L",
+    "url": "https://www.vinted.cz/items/10761968283-sliczna-bluzka-merino-wool-l",
+    "cena_celkem": "88.61 CZK",
+    "stav": {
+      "status_id": 2,
+      "limit_ceny_pct": 60
+    },
+    "navrzeny_verdikt": "ZVÁŽIT",
+    "verdikt": "ZVÁŽIT",
+    "upraveno_kodem": [],
+    "duvody": [
+      "Na fotkách je několik drobných míst, která mohou být zatažení nebo díra od molů, a u merina je nutné je ověřit zblízka.",
+      "Chybí fotky rukávů, manžet a zadního dílu, takže stav není celý ověřený.",
+      "Štítek uvádí 100% merino a prodejce má výbornou historii, cena je velmi nízká a nabídka je jinak slušná."
+    ],
+    "podrobnosti": {
+      "stari_modelu": {
+        "odhad": "nelze určit",
+        "od_let": null,
+        "do_let": null,
+        "jistota": "nejisté",
+        "z_ceho": "Na fotkách není datum výroby ani sezóna, štítek uvádí jen 100% Merino Wool a logo Next, model nelze spolehlivě identifikovat."
+      },
+      "cena_nove": {
+        "od_kc": 700,
+        "do_kc": 1100,
+        "jistota": "pravděpodobné",
+        "z_ceho": "Odhad vychází z obvyklé ceny podobného merino trika značky Next v UK (cca 25–35 GBP) přepočtené na Kč; cena nebyla ověřena, poměr ceny se dopočítá v kódu.",
+        "pomer_ceny": {
+          "cena_celkem_kc": 88.61,
+          "pri_dolni_mezi_pct": 13,
+          "pri_horni_mezi_pct": 8
+        }
+      },
+      "izolace_material": "100% Merino Wool (štítek), pruhovaný pletený materiál, složení jinak neuvedeno, gramáž neuvedena.",
+      "stav_podle_fotek": "Pruhovaný vzor a límec působí celkem pěkně bez velkých vad. Na fotkách 3 a 4 je ale drobné malé místo uprostřed předního dílu, které může být zatažený steh nebo díra od molů, z fotek to nejde jednoznačně určit. Stav odpovídá štítku Velmi dobrý jen za předpokladu, že jde o pouhé zatažení. Také je na fotce 2 mírně zvlněný materiál v oblasti ramene.",
+      "chybejici_fotky": [
+        "Detail rukávů a manžet",
+        "Zadní díl",
+        "Celkový pohled na celou přední stranu zblízka při světle proti látce (kvůli molům)",
+        "Detail spodního lemu"
+      ],
+      "prodavajici": "Prodejce pinka542 má hodnocení 5/5 a 1052 recenzí, což je důvěryhodná historie. Popis obsahuje jen slovo „Polecam“ bez konkrétních informací o stavu, stáří nebo použití. Riziko je nízké.",
+      "otazky_na_prodavajiciho": [
+        "Můžete vyfotit to malé místo uprostřed předního dílu zblízka při denním světle a proti světlu?",
+        "Můžete přidat fotky rukávů, manžet, zadního dílu a spodního lemu?",
+        "Jsou na věci nějaké díry od molů nebo zatažení, o kterých víte?",
+        "Jaké jsou přesné rozměry (šířka v podpaží, délka)?",
+        "Z jaké sezóny je triko nebo kdy bylo koupeno?"
+      ],
+      "prirodna_vlakna_pct": 100
+    },
+    "model": "claude-haiku-5-5",
+    "pouziti": {
+      "effort": "medium",
+      "input_tokens": 9824,
+      "output_tokens": 2617,
+      "pokusu": 1
+    },
+    "foto": "https://images1.vinted.net/t/06_00feb_C4r4L6u3ZgZtqVGEt6aF3vru/f800/3307ccef.webp?s=70a9fb992370242eba99ceb311465860d1f1aa66",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:56:03.908Z"
+  },
+  {
+    "id": "10761461308",
+    "kategorie": "merino",
+    "nazev": "Termiczna kodzulka  HH",
+    "url": "https://www.vinted.cz/items/10761461308-termiczna-kodzulka-hh",
+    "cena_celkem": "241.61 CZK",
+    "stav": {
+      "status_id": 2,
+      "limit_ceny_pct": 60
+    },
+    "navrzeny_verdikt": "ZVÁŽIT",
+    "verdikt": "ZVÁŽIT",
+    "upraveno_kodem": [],
+    "duvody": [
+      "Složení nelze ověřit, protože štítek se složením je vystřižený a popis uvádí buď Lifa Merino, nebo čistý polypropylen, který by znamenal vyřazení kvůli nedostatku přírodních vláken.",
+      "Fotky ukazují čistý stav bez viditelných děr, žmolků a skvrn, což odpovídá údaji prodávajícího „velmi dobrý“.",
+      "Chybí detailní fotky podpaží a manžet a nelze určit přesný model ani stáří."
+    ],
+    "podrobnosti": {
+      "stari_modelu": {
+        "odhad": "nelze určit",
+        "od_let": null,
+        "do_let": null,
+        "jistota": "nejisté",
+        "z_ceho": "Na fotkách je jen logo HH a motiv vloček, bez data výroby nebo kódu modelu. Bez přesného modelu nelze stáří odhadnout."
+      },
+      "cena_nove": {
+        "od_kc": 900,
+        "do_kc": 1400,
+        "jistota": "nejisté",
+        "z_ceho": "Orientační odhad podle běžné ceny funkčních triček Helly Hansen Lifa; přesný model ani aktuální cenu jsem neověřil.",
+        "pomer_ceny": {
+          "cena_celkem_kc": 241.61,
+          "pri_dolni_mezi_pct": 27,
+          "pri_horni_mezi_pct": 17
+        }
+      },
+      "izolace_material": "Neuvedeno; nejde o izolaci. Složení podle inzerátu: polyester, merino. Popis: Lifa Merino nebo čistý Lifa polypropylen. Štítek se složením je vystřižený.",
+      "stav_podle_fotek": "Na fotkách nejsou vidět díry, žmolky, skvrny ani prošoupání. Švy a podpaží vypadají čistě. Stav odpovídá údaji „velmi dobrý“, ale detaily nejsou dost ostré na jistý závěr o drobných molech.",
+      "chybejici_fotky": [
+        "Detail podpaží zblízka",
+        "Detail manžet a spodního lemu",
+        "Detail štítku se složením (pokud existuje)",
+        "Fotka v protisvětle pro kontrolu děr od molů"
+      ],
+      "prodavajici": "saanya8, hodnocení 5/5, 82 recenzí. Silný profil s nízkým rizikem. Prodávající je zřejmě z Polska, což nevadí.",
+      "otazky_na_prodavajiciho": [
+        "Jaké přesné složení má triko (procento merina a polyesteru, nebo polypropylenu)? Můžete poslat fotku štítku se složením?",
+        "Jaký přesný model je to a z jaké sezóny?",
+        "Můžete poslat detailní fotky podpaží, manžet a spodního lemu?",
+        "Jaká je gramáž (g/m²)?"
+      ],
+      "prirodna_vlakna_pct": null
+    },
+    "model": "claude-haiku-5-5",
+    "pouziti": {
+      "effort": "medium",
+      "input_tokens": 10110,
+      "output_tokens": 2350,
+      "pokusu": 1
+    },
+    "foto": "https://images1.vinted.net/t/05_00529_tnHbuXCJDYcC6BbA1XMSqYzZ/f800/1a17ba76.webp?s=8d5fe1ef55a7655fd00cc24298bb5e8012ad3267",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:56:16.764Z"
+  },
+  {
+    "id": "10761243723",
+    "kategorie": "merino",
+    "nazev": "Merinito, koszulka damska, 100% merino, rozmiar L",
+    "url": "https://www.vinted.cz/items/10761243723-merinito-koszulka-damska-100-merino-rozmiar-l",
+    "cena_celkem": "429.90 CZK",
+    "stav": {
+      "status_id": 2,
+      "limit_ceny_pct": 60
+    },
+    "navrzeny_verdikt": "ZVÁŽIT",
+    "verdikt": "ZVÁŽIT",
+    "upraveno_kodem": [],
+    "duvody": [
+      "Složení 100 % merino je uvedeno jen v názvu, štítek s údajem o složení na fotkách není čitelný.",
+      "Chybí detailní fotky podpaží a fotka proti světlu, takže nelze vyloučit díry od molů.",
+      "Stáří trička nelze určit a popis prodávajícího neobsahuje žádnou konkrétní informaci o věci."
+    ],
+    "podrobnosti": {
+      "stari_modelu": {
+        "odhad": "nelze určit",
+        "od_let": null,
+        "do_let": null,
+        "jistota": "nejisté",
+        "z_ceho": "Na fotkách není sezónní štítek ani datum výroby, model bez známé verze, prodávající stáří neuvedl."
+      },
+      "cena_nove": {
+        "od_kc": 900,
+        "do_kc": 1400,
+        "jistota": "nejisté",
+        "z_ceho": "Odhad rozmezí pro dámské merino tričko značky Merinito podle obvyklých cen podobných triček; přesná aktuální cena z dat neplyne.",
+        "pomer_ceny": {
+          "cena_celkem_kc": 429.9,
+          "pri_dolni_mezi_pct": 48,
+          "pri_horni_mezi_pct": 31
+        }
+      },
+      "izolace_material": "Neuvedeno kromě názvu a značky: 100% merino (dle názvu). Gramáž neuvedena. Bez izolace.",
+      "stav_podle_fotek": "Na fotkách nejsou viditelné díry, žmolky ani zplstění. Lem a manžety vypadají čistě. Na zádech v oblasti ramen je drobné nerovnoměrné vybarvení, které může být odraz světla nebo vybledlá plocha, na fotkách nelze jednoznačně posoudit. Barva na fotkách je intenzivní fialová, prodávající uvádí, že fotky barvu nezachytily přesně.",
+      "chybejici_fotky": [
+        "Detail podpaží (typické místo prošoupání u merino triček)",
+        "Fotka proti světlu nebo detail látky zblízka pro vyloučení molích děr",
+        "Detail štítku se složením a údaji o praní (čitelný)",
+        "Případně detail ramen a zad zblízka kvůli nerovnému vybarvení"
+      ],
+      "prodavajici": "Prodávající wielkipolak, hodnocení 4.7/5 z 50 recenzí, z Polska. Dostatečný počet recenzí a dobré hodnocení, bez zjevného rizika přeprodejce.",
+      "otazky_na_prodavajiciho": [
+        "Můžete poslat čitelnou fotku štítku se složením (% merina) a údaji o praní?",
+        "Z jakého roku nebo sezóny tričko pochází a kdy jste ho kupoval/a?",
+        "Můžete přidat fotku podpaží a fotku proti světlu kvůli molům?",
+        "Jak často a jak se tričko nosilo nebo prало?",
+        "Můžete poslat fotku zad v oblasti ramen zblízka, abyste vysvětlil/a nerovnoměrné vybarvení?"
+      ],
+      "prirodna_vlakna_pct": 100
+    },
+    "model": "claude-haiku-5-5",
+    "pouziti": {
+      "effort": "medium",
+      "input_tokens": 10011,
+      "output_tokens": 2079,
+      "pokusu": 1
+    },
+    "foto": "https://images1.vinted.net/t/05_00c97_3MzB5vjfzZ8qonRe8etkWcZZ/f800/527b4670.webp?s=cce924d7df5fcea3ef4846b32732f6662f3e8387",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:56:29.605Z"
+  },
+  {
+    "id": "10760454863",
+    "kategorie": "merino",
+    "nazev": "Kari traa L bluza termiczna merino",
+    "url": "https://www.vinted.cz/items/10760454863-kari-traa-l-bluza-termiczna-merino",
+    "cena_celkem": "459.33 CZK",
+    "stav": {
+      "status_id": 2,
+      "limit_ceny_pct": 60
+    },
+    "navrzeny_verdikt": "ZVÁŽIT",
+    "verdikt": "ZVÁŽIT",
+    "upraveno_kodem": [],
+    "duvody": [
+      "Materiál je dle popisu 100% merino, takže splňuje požadavek na přírodní vlákna, a na fotkách nejsou vidět díry, žmolky ani vyblednutí.",
+      "Prodávající nemá žádné hodnocení ani recenze, což je riziko, protože nelze ověřit spolehlivost prodeje.",
+      "Chybí detailní fotky podpaží, zadní části na detailu (díry od molů) a čitelný štítek se složením, proto nelze stav posoudit úplně."
+    ],
+    "podrobnosti": {
+      "stari_modelu": {
+        "odhad": "nelze určit",
+        "od_let": null,
+        "do_let": null,
+        "jistota": "nejisté",
+        "z_ceho": "Štítek s datem ani kód produktu nejsou vidět. Název ani model nejsou v inzerátu přesně uvedeny. Pro merino spodní prádlo se stáří nehodnotí stejně jako u bund."
+      },
+      "cena_nove": {
+        "od_kc": 1200,
+        "do_kc": 1800,
+        "jistota": "nejisté",
+        "z_ceho": "Přesný model ani rok nejsou známé. Odhad vychází z orientační ceny merino funkčních triček Kari Traa v běžném prodeji. Poměr ceny počítá kód.",
+        "pomer_ceny": {
+          "cena_celkem_kc": 459.33,
+          "pri_dolni_mezi_pct": 38,
+          "pri_horni_mezi_pct": 26
+        }
+      },
+      "izolace_material": "Úplet, 100% merino dle popisu. Gramáž neuvedena. Složení nelze ověřit ze štítku na fotkách.",
+      "stav_podle_fotek": "Na fotkách nejsou vidět žádné díry, žmolky, vytažené nitě ani vyblednutí. Oranžové lemy a manžety vypadají nepoškozeně. Zpředu i zezadu je látka rovnoměrná. Zplstění ani deformace na fotkách nejsou patrné, ale detail podpaží chybí.",
+      "chybejici_fotky": [
+        "Detail podpaží (prošoupání, žmolky)",
+        "Detail zadní části a ramen v protisvětle (díry od molů)",
+        "Čitelný štítek se složením a údržbou",
+        "Detail spodního lemu a okraje rukávů bez zvětšení"
+      ],
+      "prodavajici": "Prodávající jahopla má hodnocení 0/5 a 0 recenzí, takže nelze ověřit spolehlivost ani historii prodeje. Popis je stručný a obsahuje jen rozměry a složení.",
+      "otazky_na_prodavajiciho": [
+        "Můžete poslat detailní fotku podpaží a zadní části v protisvětle kvůli molům?",
+        "Jaký je přesný název modelu a rok výroby či sezóna?",
+        "Jak dlouho jste bluzu nosila a jak se prala (teplota, sušička)?",
+        "Můžete ověřit složení a gramáž na štítku?"
+      ],
+      "prirodna_vlakna_pct": 100
+    },
+    "model": "claude-haiku-5-5",
+    "pouziti": {
+      "effort": "medium",
+      "input_tokens": 9879,
+      "output_tokens": 2104,
+      "pokusu": 1
+    },
+    "foto": "https://images1.vinted.net/t/02_00238_sBiU2RkrUEJ8GGiMLciCs8E1/f800/41ddde31.webp?s=74f3c0a54c6301cf16b17857698977bba04385e5",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:56:43.444Z"
+  },
+  {
+    "id": "10760840567",
+    "kategorie": "merino",
+    "nazev": "Wełniana różowa szara bluzka wełna merino Everest L wool top pink grey thermoactive sport ski",
+    "url": "https://www.vinted.cz/items/10760840567-welniana-rozowa-szara-bluzka-welna-merino-everest-l-wool-top-pink-grey-thermoactive-sport-ski",
+    "cena_celkem": "488.75 CZK",
+    "stav": {
+      "status_id": 2,
+      "limit_ceny_pct": 60
+    },
+    "navrzeny_verdikt": "KOUPIT",
+    "verdikt": "ZVÁŽIT",
+    "upraveno_kodem": [
+      {
+        "pravidlo": "cena_nejista",
+        "z": "KOUPIT",
+        "na": "ZVÁŽIT",
+        "poznamka": "Jistota odhadu ceny nové je „nejisté“, KOUPIT není možné."
+      }
+    ],
+    "duvody": [
+      "Složení je dle štítku 100% merino vlna, což odpovídá kritériím pro merino kusy.",
+      "Na fotkách nejsou vidět díry, žmolky ani prošoupaná místa, a stav odpovídá označení velmi dobrý.",
+      "Prodávající má 5/5 hodnocení a velký počet recenzí, takže je málo rizikový; cena je ale nejistá, proto ji nebere jako hlavní důvod."
+    ],
+    "podrobnosti": {
+      "stari_modelu": {
+        "odhad": "nelze určit",
+        "od_let": null,
+        "do_let": null,
+        "jistota": "nejisté",
+        "z_ceho": "Na fotkách ani ve štítku není datum výroby ani sezóna; model Everest termo tričko nelze s jistotou datovat."
+      },
+      "cena_nove": {
+        "od_kc": 600,
+        "do_kc": 1000,
+        "jistota": "nejisté",
+        "z_ceho": "Odhad z běžné ceny merino termo triček značek podobné kategorie; přesnou aktuální cenu modelu Everest nelze z dat ověřit.",
+        "pomer_ceny": {
+          "cena_celkem_kc": 488.75,
+          "pri_dolni_mezi_pct": 81,
+          "pri_horni_mezi_pct": 49
+        }
+      },
+      "izolace_material": "Bez izolace (termoprádlo). Složení dle štítku: 100% merino vlna. Gramáž neuvedena, na fotkách střední tloušťka pleteniny. Barva: růžová s šedými vsadkami a prošitím.",
+      "stav_podle_fotek": "Na fotkách vypadá látka čistě, bez viditelných děr, žmolků nebo zplstění; manžety a lem působí v pořádku. Odpovídá štítku velmi dobrý. Drobné díry od molů lze na fotkách vyloučit jen částečně.",
+      "chybejici_fotky": [
+        "Detail podpaží a švů pod rukávy",
+        "Detail na případné díry od molů v protisvětle",
+        "Detail límce a spodního lemu zblízka"
+      ],
+      "prodavajici": "Prodávající imagiinee: hodnocení 5/5, 1371 recenzí, země nabídky ČR. Vysoký počet recenzí snižuje riziko; šablonový popis bez detailů je spíše standardní.",
+      "otazky_na_prodavajiciho": [
+        "Jaká je přesná gramáž (g/m²) a kolik je to let od koupě?",
+        "Můžete poslat rozměry v cm (šířka v hrudi, délka, délka rukávu)?",
+        "Jsou na látce nějaké díry od molů nebo zplstění po praní?"
+      ],
+      "prirodna_vlakna_pct": 100
+    },
+    "model": "claude-haiku-5-5",
+    "pouziti": {
+      "effort": "medium",
+      "input_tokens": 8808,
+      "output_tokens": 1778,
+      "pokusu": 1
+    },
+    "foto": "https://images1.vinted.net/t/06_0151d_5GPvGwP9b1hKvu6VPDmunyMY/f800/9bf384ca.webp?s=5fc9e9cd6c8d34455aa9cad5206b64ddcaf558bb",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:56:54.021Z"
+  },
+  {
+    "id": "5834578966",
+    "kategorie": "upozornit",
+    "nazev": "Knihy",
+    "url": "https://www.vinted.cz/items/5834578966-knihy",
+    "cena_celkem": "60.00 CZK",
+    "foto": "https://images1.vinted.net/t/03_0167d_MqtoFzFigCLiTj4QgDcHPrr8/f800/1a532d0b.webp?s=890c890413533405f433d5e18ccb63320ab254f7",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:57:18.462Z"
+  },
+  {
+    "id": "5737344751",
+    "kategorie": "upozornit",
+    "nazev": "Kniha Jediná vzpomínka Flory Banksové",
+    "url": "https://www.vinted.cz/items/5737344751-kniha-jedina-vzpominka-flory-banksove",
+    "cena_celkem": "70.50 CZK",
+    "foto": "https://images1.vinted.net/t/02_00ed0_SWUh7pTP61awm22G7vPnJoXe/f800/b0f858ef.webp?s=bc5087a535c1abb152f8fb1ee5d252de37b1dd60",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:57:18.462Z"
+  },
+  {
+    "id": "5737302155",
+    "kategorie": "upozornit",
+    "nazev": "Kniha Americké zápisky",
+    "url": "https://www.vinted.cz/items/5737302155-kniha-americke-zapisky",
+    "cena_celkem": "70.50 CZK",
+    "foto": "https://images1.vinted.net/t/04_00242_Hu62GM3UtJ6fT356MWc3z61R/f800/e76ff5c4.webp?s=a6de8f60c783d31cb00558c79ee3f93700b775dc",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:57:18.464Z"
+  },
+  {
+    "id": "10473364834",
+    "kategorie": "upozornit",
+    "nazev": "Pady - Sandra Dieckmann",
+    "url": "https://www.vinted.cz/items/10473364834-pady-sandra-dieckmann",
+    "cena_celkem": "312.00 CZK",
+    "foto": "https://images1.vinted.net/t/02_00468_X48MKx5Fy5zPuoyNJL7arKog/f800/b44a8709.webp?s=280f739468cc9e569f20f05189d5def51527b446",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:57:25.246Z"
+  },
+  {
+    "id": "8520938844",
+    "kategorie": "upozornit",
+    "nazev": "Tajemství lesa",
+    "url": "https://www.vinted.cz/items/8520938844-tajemstvi-lesa",
+    "cena_celkem": "70.50 CZK",
+    "foto": "https://images1.vinted.net/t/05_025d0_Eyusy3ZdPk46E7gorjyuqsF8/f800/753f2bd1.webp?s=750a694aef94da1f9755b19248155b4f139d7c02",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:57:25.247Z"
+  },
+  {
+    "id": "4062894782",
+    "kategorie": "upozornit",
+    "nazev": "kniha - Čáry máry fuč",
+    "url": "https://www.vinted.cz/items/4062894782-kniha-cary-mary-fuc",
+    "cena_celkem": "91.50 CZK",
+    "foto": "https://images1.vinted.net/t/01_00e79_PKHGSScJ28i3vo4v6j78UmEU/f800/c94ef7b5.webp?s=a05ddc03a47cde945215c74ff5c890f61e2e98ed",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:57:32.329Z"
+  },
+  {
+    "id": "10337706575",
+    "kategorie": "upozornit",
+    "nazev": "Myš Bláža na cestě za blahobytem - Jarmila Léblová",
+    "url": "https://www.vinted.cz/items/10337706575-mys-blaza-na-ceste-za-blahobytem-jarmila-leblova",
+    "cena_celkem": "52.65 CZK",
+    "foto": "https://images1.vinted.net/t/02_003a8_TKQmkKHRsZaKvWoYHJ4QVSNc/f800/982aa810.webp?s=0e866076254773a3cb6f1224152591454de605a8",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:57:41.908Z"
+  },
+  {
+    "id": "9474677533",
+    "kategorie": "upozornit",
+    "nazev": "Myš Bláža na cestě za blahobytem (Axioma)",
+    "url": "https://www.vinted.cz/items/9474677533-mys-blaza-na-ceste-za-blahobytem-axioma",
+    "cena_celkem": "112.50 CZK",
+    "foto": "https://images1.vinted.net/t/03_00549_Zcvbk8sod8wabSc44HsqjVXX/f800/cee1fa9b.webp?s=e09e3fd0895463b719e75dc769c0f72c9004c2d3",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:57:41.909Z"
+  },
+  {
+    "id": "6644840624",
+    "kategorie": "upozornit",
+    "nazev": "S mládětem u moře, den 8 – Objevuj s úsměvem: Kočky (N. Kucharská)",
+    "url": "https://www.vinted.cz/items/6644840624-s-mladetem-u-more-den-8-objevuj-s-usmevem-kocky-n-kucharska",
+    "cena_celkem": "144.00 CZK",
+    "foto": "https://images1.vinted.net/t/04_02287_EdAWnjhqyRykuCzMyhZJiP2p/f800/c6f688e7.webp?s=ff6ecaff58d111da9c8450d0e0af8453aadc060b",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:57:41.910Z"
+  },
+  {
+    "id": "5811322446",
+    "kategorie": "upozornit",
+    "nazev": "Rybí sliby",
+    "url": "https://www.vinted.cz/items/5811322446-rybi-sliby",
+    "cena_celkem": "123.00 CZK",
+    "foto": "https://images1.vinted.net/t/04_014fb_LeF4K7ZKHthv1oV63BY1APBx/f800/3bea29c3.webp?s=c1aa44f676c638bc2610333d7fdfd556f29e6690",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:57:41.911Z"
+  },
+  {
+    "id": "5772304641",
+    "kategorie": "upozornit",
+    "nazev": "O Nebesáři - Vratislav Maňák",
+    "url": "https://www.vinted.cz/items/5772304641-o-nebesari-vratislav-manak",
+    "cena_celkem": "228.00 CZK",
+    "foto": "https://images1.vinted.net/t/01_02488_qRi5SpkZPwja6Wp6ZCDaxWWb/f800/c39a1a23.webp?s=6ebe537dce33919e769e913df39e82b9307ccc7d",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:57:41.912Z"
+  },
+  {
+    "id": "10574338990",
+    "kategorie": "upozornit",
+    "nazev": "Chrániče na kola",
+    "url": "https://www.vinted.cz/items/10574338990-chranice-na-kola",
+    "cena_celkem": "753.00 CZK",
+    "foto": "https://images1.vinted.net/t/06_00a0d_2TXPBEhRk69vJRu3BUtTXgRd/f800/55f20ee0.webp?s=239eecc50b87ac2e65973370b0eda7396daaeacc",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:57:49.285Z"
+  },
+  {
+    "id": "10253598145",
+    "kategorie": "upozornit",
+    "nazev": "Chrániče na kolena Woom",
+    "url": "https://www.vinted.cz/items/10253598145-chranice-na-kolena-woom",
+    "cena_celkem": "543.00 CZK",
+    "foto": "https://images1.vinted.net/t/06_01063_XCFYo2v3oncFQnfrPwzzBsAW/f800/785b1525.webp?s=1b038ec5be1d4b3f2afc07b4feb30321a27d999b",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:57:49.287Z"
+  },
+  {
+    "id": "10314652162",
+    "kategorie": "upozornit",
+    "nazev": "Pyžamo",
+    "url": "https://www.vinted.cz/items/10314652162-pyzamo",
+    "cena_celkem": "483.78 CZK",
+    "foto": "https://images1.vinted.net/t/05_001b9_Mngigw1fMyWcdaxhBAw9WZEJ/f800/c8951c3f.webp?s=0f7219972001e11c323852f2501ab5b669eec52e",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:57:54.737Z"
+  },
+  {
+    "id": "10208908252",
+    "kategorie": "upozornit",
+    "nazev": "Pyžamo pyžamko 122/128 Mumínci Moomins",
+    "url": "https://www.vinted.cz/items/10208908252-pyzamo-pyzamko-122128-muminci-moomins",
+    "cena_celkem": "501.00 CZK",
+    "foto": "https://images1.vinted.net/t/05_00226_sKbz4x2MjEb6M3mGyuwQaKzZ/f800/9cd692e5.webp?s=217123de18d4e2fc1de668cf45b184740962aec3",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:57:54.738Z"
+  },
+  {
+    "id": "10192004905",
+    "kategorie": "upozornit",
+    "nazev": "Lindex mikina 122/128 + triko a spodní kalhoty",
+    "url": "https://www.vinted.cz/items/10192004905-lindex-mikina-122128-triko-a-spodni-kalhoty",
+    "cena_celkem": "175.50 CZK",
+    "foto": "https://images1.vinted.net/t/05_018d1_7gFFvmF1AzAfzKd8jM97Tuaq/f800/4795142c.webp?s=7f961b5b14b8d87f8e3290922be4c7b306db049f",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:57:54.739Z"
+  },
+  {
+    "id": "10171948595",
+    "kategorie": "upozornit",
+    "nazev": "2pack pyžam Lindex 122/128",
+    "url": "https://www.vinted.cz/items/10171948595-2pack-pyzam-lindex-122128",
+    "cena_celkem": "490.50 CZK",
+    "foto": "https://images1.vinted.net/t/01_01184_AXohXjz2qV2RtZcKCWb9zuWY/f800/e7e91edc.webp?s=b7f92b07ae657f4e86aeaab9634d8cc46e17aeb2",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:57:54.740Z"
+  },
+  {
+    "id": "10141765131",
+    "kategorie": "upozornit",
+    "nazev": "Bavlnene pyzamká 122 ,druhe 128",
+    "url": "https://www.vinted.cz/items/10141765131-bavlnene-pyzamka-122-druhe-128",
+    "cena_celkem": "225.01 CZK",
+    "foto": "https://images1.vinted.net/t/06_0048d_HeAczbwVBMMxdE5YKChGx1gN/f800/d83a011a.webp?s=88f81320f88d39cf4a1c1f5ea42548780ebd0d2a",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:57:54.741Z"
+  },
+  {
+    "id": "10689072309",
+    "kategorie": "upozornit",
+    "nazev": "Peerko glamour brown",
+    "url": "https://www.vinted.cz/items/10689072309-peerko-glamour-brown",
+    "cena_celkem": "1960.50 CZK",
+    "foto": "https://images1.vinted.net/t/01_01c8a_nf4MTMrnTw2qJgh3or1o3f3m/f800/f9c36fa4.webp?s=9cc7765d69e0d714bc3746e90def4be5e60ae177",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:58:12.062Z"
+  },
+  {
+    "id": "10136689267",
+    "kategorie": "upozornit",
+    "nazev": "Barefoot tenisky",
+    "url": "https://www.vinted.cz/items/10136689267-barefoot-tenisky",
+    "cena_celkem": "543.00 CZK",
+    "foto": "https://images1.vinted.net/t/05_002d3_awm31eyRi5dXgJS7p1Cbna7m/f800/c1116545.webp?s=f2545b84c9cfcb1852b8565d9a9039c3132c862b",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:58:12.063Z"
+  },
+  {
+    "id": "9204169350",
+    "kategorie": "upozornit",
+    "nazev": "Barefoot baleríny Peerko - Petite Talisman zelené vel.42",
+    "url": "https://www.vinted.cz/items/9204169350-barefoot-baleriny-peerko-petite-talisman-zelene-vel42",
+    "cena_celkem": "1855.50 CZK",
+    "foto": "https://images1.vinted.net/t/01_01163_EBhModbcz6yCDThMpMJouUVC/f800/178d6ad6.webp?s=b4577fbe74b03cc767a323043283e4fe9461a106",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:58:12.064Z"
+  },
+  {
+    "id": "8597936889",
+    "kategorie": "upozornit",
+    "nazev": "Peerko",
+    "url": "https://www.vinted.cz/items/8597936889-peerko",
+    "cena_celkem": "2002.50 CZK",
+    "foto": "https://images1.vinted.net/t/02_0182d_2GtaYVyp2Bu3d9c4thSatwoE/f800/e37fdd92.webp?s=3a9990088c0c7e3ad2735fa4d983e7312c210682",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:58:12.065Z"
+  },
+  {
+    "id": "7345733625",
+    "kategorie": "upozornit",
+    "nazev": "Peerko Empire Chestnut veľk 42",
+    "url": "https://www.vinted.cz/items/7345733625-peerko-empire-chestnut-velk-42",
+    "cena_celkem": "3381.94 CZK",
+    "foto": "https://images1.vinted.net/t/02_005ca_dSP5FTVcq29FynrpCnG51spA/f800/75f99409.webp?s=d46d5ac6028ea3e2037c2f18212a2e78d8c65ddf",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:58:12.066Z"
+  },
+  {
+    "id": "10752680767",
+    "kategorie": "upozornit",
+    "nazev": "Směle do školy - Marianne Dubuc",
+    "url": "https://www.vinted.cz/items/10752680767-smele-do-skoly-marianne-dubuc",
+    "cena_celkem": "228.00 CZK",
+    "foto": "https://images1.vinted.net/t/02_00b3b_n81AnmSrjGVsHqPcodB8PvDo/f800/83bc963d.webp?s=5e27ca27a9c608f5266db81d2911e765db9af05f",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:58:18.147Z"
+  },
+  {
+    "id": "10712759891",
+    "kategorie": "upozornit",
+    "nazev": "Směle do školy",
+    "url": "https://www.vinted.cz/items/10712759891-smele-do-skoly",
+    "cena_celkem": "226.95 CZK",
+    "foto": "https://images1.vinted.net/t/05_010a6_RPt3fXeQukpDSVnwVMnTEm5W/f800/d027d491.webp?s=d0bc87e6564f74cc10cbececc77e145b8f417975",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:58:18.148Z"
+  },
+  {
+    "id": "10658792459",
+    "kategorie": "upozornit",
+    "nazev": "Směle do školy-Mrianne Dubecová",
+    "url": "https://www.vinted.cz/items/10658792459-smele-do-skoly-mrianne-dubecova",
+    "cena_celkem": "128.25 CZK",
+    "foto": "https://images1.vinted.net/t/02_00138_ZmQ4qYYFNWZ4teS9LSdJh9Ji/f800/8665f2fa.webp?s=77fed0247450a189593905d3d8b56ed9fc2d5d77",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:58:18.149Z"
+  },
+  {
+    "id": "10646738641",
+    "kategorie": "upozornit",
+    "nazev": "Pošťák Myšák doručuje - Marianne Dubuc",
+    "url": "https://www.vinted.cz/items/10646738641-postak-mysak-dorucuje-marianne-dubuc",
+    "cena_celkem": "280.50 CZK",
+    "foto": "https://images1.vinted.net/t/05_009ff_Snv8b4F3mWYSgAxGhShJMaN4/f800/ec8bbfaa.webp?s=57d8a877d670a1f1ee843eda13b2e4f6728c41a1",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:58:18.150Z"
+  },
+  {
+    "id": "10513478538",
+    "kategorie": "upozornit",
+    "nazev": "Pošťák Myšák doručuje - Marianne Dubuc",
+    "url": "https://www.vinted.cz/items/10513478538-postak-mysak-dorucuje-marianne-dubuc",
+    "cena_celkem": "228.00 CZK",
+    "foto": "https://images1.vinted.net/t/01_011f6_j4HCn8378tQFdRPx6mwzrzJg/f800/4b1d590c.webp?s=4a2dfe662fc89d00cbd55b7b6b1b60c2a8a3abba",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:58:18.151Z"
+  },
+  {
+    "id": "10719303468",
+    "kategorie": "upozornit",
+    "nazev": "Sweter fango rękaw falbanką z kokardą",
+    "url": "https://www.vinted.cz/items/10719303468-sweter-fango-rekaw-falbanka-z-kokarda",
+    "cena_celkem": "424.02 CZK",
+    "foto": "https://images1.vinted.net/t/02_00a40_XpsxMcEmY7so8GE4T5ygWkBR/f800/4a5ed59f.webp?s=b195fcea5658d88506c89dc7261315fa2ba810d3",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:58:26.871Z"
+  },
+  {
+    "id": "10615786992",
+    "kategorie": "upozornit",
+    "nazev": "Pantaloni femei",
+    "url": "https://www.vinted.cz/items/10615786992-pantaloni-femei",
+    "cena_celkem": "139.05 CZK",
+    "foto": "https://images1.vinted.net/t/05_01862_eaFu2b1sWuoDrxUWahRyPeMz/f800/e2fcab2a.webp?s=cca547d93b3365f20c66c35d32325e59f0087499",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:58:26.872Z"
+  },
+  {
+    "id": "10592399317",
+    "kategorie": "upozornit",
+    "nazev": "Krémová krokodýlí Mybelka 100% kůže",
+    "url": "https://www.vinted.cz/items/10592399317-kremova-krokodyli-mybelka-100-kuze",
+    "cena_celkem": "3168.00 CZK",
+    "foto": "https://images1.vinted.net/t/02_026dd_Nhz998XrJhe4u2V6AEnEKAk2/f800/162520aa.webp?s=6ceff29606807966e731c073d50fc3ef80e734e0",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:58:26.872Z"
+  },
+  {
+    "id": "10472010964",
+    "kategorie": "upozornit",
+    "nazev": "Sukienka oversize muślinowa falbany pudrowy róż NOWA",
+    "url": "https://www.vinted.cz/items/10472010964-sukienka-oversize-muslinowa-falbany-pudrowy-roz-nowa",
+    "cena_celkem": "194.53 CZK",
+    "foto": "https://images1.vinted.net/t/06_00378_MrNQxEjMFxvt8rYJgnmffaTB/f800/2458e3ee.webp?s=b9082544764e8138b90410d35d10692f34b24ca4",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:58:26.874Z"
+  },
+  {
+    "id": "10192161668",
+    "kategorie": "upozornit",
+    "nazev": "Szett",
+    "url": "https://www.vinted.cz/items/10192161668-szett",
+    "cena_celkem": "88.99 CZK",
+    "foto": "https://images1.vinted.net/t/02_016a4_okJ3SfyjSomr7Bm1WzrXEDRq/f800/8f1568cc.webp?s=5b3a50e3e3113dd73cbfe48c97f16cb91e80d77e",
+    "beh_id": "2026-11-11T12:55:32.472Z",
+    "hodnoceno": "2026-11-11T12:58:26.874Z"
   }
 ]
