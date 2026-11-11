@@ -40,6 +40,8 @@ Kategorie **`upozornit`** (např. knihy): nabídky se NEHODNOTÍ Claudem a nepla
 zjednodušeně (název, cena, odkaz, fotka) a stránka je ukazuje nahoře v sekci „Objevilo se!“ (všechny ze 7 dní, nové
 se štítkem). V `searches.txt` jde za `upozornit` dvojtečka a štítek (`upozornit:Knihy;URL`): podle něj se nabídky
 seskupí na stránce (nadpisy skupin, „Ostatní“ dole) i v souhrnné ntfy zprávě; řádek bez štítku jde do „Ostatní“.
+Karty v „Objevilo se!“ jdou skrýt stejně jako ostatní (tlačítko „Skrýt“, ukládá se v prohlížeči); prázdná skupina
+i celá sekce se při skrytí všeho schová.
 
 ## Soubory
 

@@ -548,7 +548,9 @@
 
       // Souhrn „pod tím menším“: kolik se právě zobrazuje
       const celkem = pocty.KOUPIT + pocty["ZVÁŽIT"] + pocty.NEKUPOVAT;
-      const skrytychCelkem = [...stav.skryte].filter((id) => DATA.nabidky.some((n) => n.id === id)).length;
+      const vsechnyNabidky = [...DATA.nabidky, ...(DATA.objevilo || [])];
+      const skrytychCelkem = [...stav.skryte].filter((id) => vsechnyNabidky.some((n) => n.id === id)).length;
+      aktualizujObjevilo();
       document.getElementById("celkem-info").textContent =
         `Zobrazeno celkem: ${celkem} (KOUPIT ${pocty.KOUPIT} · ZVÁŽIT ${pocty["ZVÁŽIT"]} · NEKUPOVAT ${pocty.NEKUPOVAT})` +
         ` · starší než ${DATA.maxDni} dní se mažou`;
@@ -563,25 +565,26 @@
     }
 
     /* ---------- Sekce „Objevilo se!“: karta z téže šablony, bez hodnocení ---------- */
+    const kartyObjevilo = [];    // { prvek, nabidka, skupina } – karty v sekci „Objevilo se!“
+    const skupinyObjevilo = {};  // štítek -> { nazev, nadpis, seznam }
+    const noveObjevilo = new Set(); // id nabídek z posledního běhu
+
     function vykresliObjevilo() {
       const seznam = DATA.objevilo || [];
       if (seznam.length === 0) return;                   // žádné nabídky = sekce zůstane skrytá
-      const nove = new Set(DATA.posledniBeh ? seznam.filter((n) => n.beh_id === DATA.posledniBeh.id).map((n) => n.id) : []);
+      const nove = noveObjevilo;
+      (DATA.posledniBeh ? seznam.filter((n) => n.beh_id === DATA.posledniBeh.id) : []).forEach((n) => nove.add(n.id));
       const serazene = [...seznam].sort((a, b) => {
         const rozdilNove = Number(nove.has(b.id)) - Number(nove.has(a.id));
         return rozdilNove || b.hodnoceno.localeCompare(a.hodnoceno);
       });
       // Skupiny podle štítku z searches.txt: podle abecedy, „Ostatní“ (bez štítku) úplně dole.
       const OSTATNI = "Ostatní";
-      const skupinyObjevilo = {};
       serazene.forEach((n) => {
         const nazev = n.stitek || OSTATNI;
         if (!skupinyObjevilo[nazev]) {
-          const nadpis = el("h3", "objevilo-nadpis");
-          const seznamSkupiny = el("div", "seznam");
-          skupinyObjevilo[nazev] = { nadpis, seznam: seznamSkupiny, pocet: 0 };
+          skupinyObjevilo[nazev] = { nazev, nadpis: el("h3", "objevilo-nadpis"), seznam: el("div", "seznam") };
         }
-        skupinyObjevilo[nazev].pocet++;
       });
       const hlavni = document.getElementById("objevilo-seznam");
       hlavni.className = "";                              // skupiny mají vlastní .seznam
@@ -589,8 +592,7 @@
         .sort((a, b) => (a === OSTATNI) - (b === OSTATNI) || a.localeCompare(b, "cs"))
         .forEach((nazev) => {
           const s = skupinyObjevilo[nazev];
-          s.nadpis.textContent = `${nazev} (${s.pocet})`;
-          hlavni.append(s.nadpis, s.seznam);
+          hlavni.append(s.nadpis, s.seznam);          // text nadpisu (s počtem) doplní aktualizujObjevilo()
         });
       serazene.forEach((n) => {
         const kontejner = skupinyObjevilo[n.stitek || OSTATNI].seznam;
@@ -606,13 +608,38 @@
         prvek.querySelector(".karta-cena").textContent = formatujCenuNabidky(n.cena_celkem);
         prvek.querySelector(".duvody").remove();
         prvek.querySelector(".podrobnosti").remove();
-        prvek.querySelector(".tlacitko-skryt").remove();
         const odkaz = prvek.querySelector("a.tlacitko");
         if (/^https:\/\//.test(n.url)) odkaz.href = n.url; else odkaz.remove();
+        // Tlačítko „Skrýt“: stejné ukládání v prohlížeči jako u ostatních karet
+        prvek.querySelector(".tlacitko-skryt").addEventListener("click", () => {
+          if (stav.skryte.has(n.id)) stav.skryte.delete(n.id); else stav.skryte.add(n.id);
+          ulozSkryte();
+          aktualizuj();
+        });
         kontejner.append(prvek);
+        kartyObjevilo.push({ prvek, nabidka: n, skupina: skupinyObjevilo[n.stitek || OSTATNI] });
       });
-      document.getElementById("objevilo-pocet").textContent = `(${seznam.length}, nových ${nove.size})`;
-      document.getElementById("objevilo").hidden = false;
+    }
+
+    /* Skrývání a počty v sekci „Objevilo se!“ (volá se z aktualizuj) */
+    function aktualizujObjevilo() {
+      if (kartyObjevilo.length === 0) return;
+      kartyObjevilo.forEach(({ prvek, nabidka: n }) => {
+        const jeSkryta = stav.skryte.has(n.id);
+        prvek.hidden = jeSkryta && !stav.ukazSkryte;
+        prvek.classList.toggle("karta--skryta", jeSkryta);
+        prvek.querySelector(".tlacitko-skryt").textContent = jeSkryta ? "Vrátit zpět" : "Skrýt";
+      });
+      let celkem = 0, novych = 0;
+      Object.values(skupinyObjevilo).forEach((s) => {
+        const viditelne = kartyObjevilo.filter((k) => k.skupina === s && !k.prvek.hidden);
+        s.nadpis.textContent = `${s.nazev} (${viditelne.length})`;
+        s.nadpis.hidden = s.seznam.hidden = viditelne.length === 0;   // prázdná skupina zmizí
+        celkem += viditelne.length;
+        novych += viditelne.filter((k) => noveObjevilo.has(k.nabidka.id)).length;
+      });
+      document.getElementById("objevilo-pocet").textContent = `(${celkem}, nových ${novych})`;
+      document.getElementById("objevilo").hidden = celkem === 0;       // všechno skryté = sekce zmizí
     }
 
     /* ---------- Souhrn nahoře: nové nabídky z posledního běhu ---------- */
