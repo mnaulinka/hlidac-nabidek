@@ -55,8 +55,10 @@ Lokálně: `node hlidac.js` (celý běh, stojí peníze), `node stranka.js` (jen
 
 ## Workflow a GitHub Pages
 
-- `hlidac.yml` se spouští v 4:00 a 5:00 UTC; první krok zjistí, jestli je v Praze 6:00, a špatnou hodinu přeskočí
-  (letní/zimní čas). Ruční spuštění (`workflow_dispatch`) hodinu nekontroluje. Plánované běhy GitHub občas zpozdí.
+- `hlidac.yml` se spouští čtyřikrát denně v 6:17, 7:17, 8:17 a 9:17 (cron s polem `timezone: "Europe/Prague"`,
+  GitHub běhy na celou hodinu často zpožďuje nebo zahazuje). První krok čte `last-run.json`: pokud už dnes (pražské
+  datum) proběhl úspěšný běh (`uspech: true`), plánovaný běh skončí. Ruční spuštění (`workflow_dispatch`) se provede
+  vždy. Zda GitHub `timezone` opravdu respektuje, se teprve ověřuje.
 - Klíče se berou z **GitHub Secrets** `APIFY_TOKEN` a `ANTHROPIC_API_KEY` (v kódu `createClients()` čte proměnné
   prostředí a pak `.env`).
 - Po běhu workflow commitne `seen.json`, `results.json` a `last-run.json` zpět do `main` (i po chybném běhu).
@@ -83,8 +85,9 @@ Lokálně: `node hlidac.js` (celý běh, stojí peníze), `node stranka.js` (jen
 
 ## Co zbývá
 
-1. **Ověřit ranní běh:** v Actions mají být dva běhy (jeden provede práci, druhý skončí „přeskakuji“). Plánované
-   spuštění se zatím nikdy nepotvrdilo; ručně spuštěný běh prošel.
+1. **Ověřit ranní běh:** v Actions má být jeden běh, který provede práci, a další ten den skončí „přeskakuji“.
+   Plánované spuštění se zatím nikdy nepotvrdilo (11. 11. 2026 se starý plán nespustil vůbec); ručně spuštěný běh
+   prošel. Ověřit i to, že pole `timezone` funguje.
 2. **Upozornění přes ntfy** pro kategorii „upozornit“ (podrobnosti dořešit s uživatelkou). Název kanálu (topic)
    do GitHub Secrets (např. `NTFY_TOPIC`) a lokálně do `.env`, **nikdy do kódu ani README**.
 3. **Tlačítko „Kopírovat pro Clauda“** na kartě v `sablona.html` (zkopíruje data nabídky k vložení do chatu s Claudem).
