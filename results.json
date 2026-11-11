@@ -678,5 +678,203 @@
     "hodnoceno": "2026-11-10T14:27:40.677Z",
     "foto": "https://images1.vinted.net/t/06_008f2_gvHxHs9ZsfeVi2sTDMqwQ8A1/f800/679b28f1.webp?s=4bdd4e6ee972a85d24f250491be847fd39db5de6",
     "beh_id": null
+  },
+  {
+    "id": "10757877280",
+    "kategorie": "merino",
+    "nazev": "Kari Traa Rose LS – koszulka termoaktywna 100% wełna merino, r. L",
+    "url": "https://www.vinted.cz/items/10757877280-kari-traa-rose-ls-koszulka-termoaktywna-100-welna-merino-r-l",
+    "cena_celkem": "835.93 CZK",
+    "stav": {
+      "status_id": 2,
+      "limit_ceny_pct": 60
+    },
+    "navrzeny_verdikt": "ZVÁŽIT",
+    "verdikt": "ZVÁŽIT",
+    "upraveno_kodem": [],
+    "duvody": [
+      "Štítek uvádí 100% merino a fotky ukazují čistý stav bez viditelných děr, žmolků nebo zplstění.",
+      "Stáří modelu nelze spolehlivě určit, a pokud je kus starší než 6 let, je nutné ho vyřadit, proto je potřeba ověřit sezónu.",
+      "Popis prodávající je prázdný a chybí detailní fotky podpaží, spodního lemu a míst v protisvětle na molí díry."
+    ],
+    "podrobnosti": {
+      "stari_modelu": {
+        "odhad": "nelze spolehlivě určit, pravděpodobně několik let",
+        "od_let": 2,
+        "do_let": 8,
+        "jistota": "nejisté",
+        "z_ceho": "Vzor Rose je dlouhodobě vyráběný, takže stáří nelze odvodit z designu. Štítek neobsahuje datum ani sezónu a na fotkách není kód produktu."
+      },
+      "cena_nove": {
+        "od_kc": 2200,
+        "do_kc": 3000,
+        "jistota": "nejisté",
+        "z_ceho": "Orientační odhad ceny podobného merino dlouhého trika značky Kari Traa. Aktuální cenu neověřuji, takže jde o hrubý odhad.",
+        "pomer_ceny": {
+          "cena_celkem_kc": 835.93,
+          "pri_dolni_mezi_pct": 38,
+          "pri_horni_mezi_pct": 28
+        }
+      },
+      "izolace_material": "Bez izolace. Štítek: 100% merino wool, hlavní materiál i kontrastní vložky. Péče: strojně studeně, trvalé lisování, nebělit.",
+      "stav_podle_fotek": "Na fotkách vypadá čistě, bez viditelných děr, žmolků, vytažených manžet nebo zplstění. Vzor a barvy nejsou vybledlé. Límec a manžety jsou v pořádku. Podpaží a spodní lem na fotkách nejsou vidět zblízka.",
+      "chybejici_fotky": [
+        "Detail podpaží",
+        "Detail spodního lemu a boků",
+        "Fotka v protisvětle kvůli dírám od molů",
+        "Detail ramenních švů"
+      ],
+      "prodavajici": "marrta94, hodnocení 4.9/5 a 1331 recenzí, což je silný profil s nízkým rizikem. Popis obsahuje jen text \"$15d\" a neuvádí žádné konkrétní informace o kusu.",
+      "otazky_na_prodavajiciho": [
+        "Z jaké sezóny je trika nebo kdy byla koupena?",
+        "Jak často byla nošena a jak se prala?",
+        "Jsou na podpaží, lemu nebo manžetách žmolky či díry od molů?",
+        "Můžete poslat fotku v protisvětle a detail podpaží?",
+        "Jaké jsou přesné rozměry (šířka v podpaží, délka)?"
+      ],
+      "prirodna_vlakna_pct": 100
+    },
+    "model": "claude-haiku-5-5",
+    "pouziti": {
+      "effort": "medium",
+      "input_tokens": 9214,
+      "output_tokens": 2791,
+      "pokusu": 1
+    },
+    "foto": "https://images1.vinted.net/t/02_00ece_aXxWU7SSTaqdQx98kwG8w8gb/f800/6d3f5122.webp?s=bb06b4413e07c9e7c7828548b9af0ea7f635cb70",
+    "beh_id": "2026-11-11T07:55:34.344Z",
+    "hodnoceno": "2026-11-11T07:56:04.841Z"
+  },
+  {
+    "id": "10753250599",
+    "kategorie": "merino",
+    "nazev": "Merinó gyapjú garbó",
+    "url": "https://www.vinted.cz/items/10753250599-merino-gyapju-garbo",
+    "cena_celkem": "138.69 CZK",
+    "stav": {
+      "status_id": 2,
+      "limit_ceny_pct": 60
+    },
+    "navrzeny_verdikt": "KOUPIT",
+    "verdikt": "ZVÁŽIT",
+    "upraveno_kodem": [
+      {
+        "pravidlo": "cena_nejista",
+        "z": "KOUPIT",
+        "na": "ZVÁŽIT",
+        "poznamka": "Jistota odhadu ceny nové je „nejisté“, KOUPIT není možné."
+      }
+    ],
+    "duvody": [
+      "Popis i fotky potvrzují 100% merino, což splňuje požadavek na přírodní vlákna.",
+      "Stav na fotkách vypadá čistě bez viditelných děr od molů, žmolků nebo zplstění, a stav odpovídá označení Velmi dobrý.",
+      "Prodávající má hodnocení 5/5 a 389 recenzí, takže je to důvěryhodný prodejce."
+    ],
+    "podrobnosti": {
+      "stari_modelu": {
+        "odhad": "nelze určit",
+        "od_let": null,
+        "do_let": null,
+        "jistota": "nejisté",
+        "z_ceho": "Na fotkách ani v popisu není štítek s datem ani sezónou; u merina stáří neovlivňuje pravidla."
+      },
+      "cena_nove": {
+        "od_kc": 2500,
+        "do_kc": 4500,
+        "jistota": "nejisté",
+        "z_ceho": "Odhad orientačně podle ceny prémiové švýcarské značky Beutler za merino rolák; přesnou aktuální cenu nemám ověřenou, rozmezí je široké.",
+        "pomer_ceny": {
+          "cena_celkem_kc": 138.69,
+          "pri_dolni_mezi_pct": 6,
+          "pri_horni_mezi_pct": 3
+        }
+      },
+      "izolace_material": "Není izolace (pletenina). Složení dle popisu: 100% merino vlna. Gramáž neuvedena; podle vzhledu jemná pletenina, tenčí kus, který se může rychleji opotřebovat.",
+      "stav_podle_fotek": "Na fotkách nejsou viditelné skvrny, díry, žmolky ani zplstění. Límec, manžety a spodní lem vypadají v pořádku. Prodávající uvádí stav Velmi dobrý, fotky to podporují.",
+      "chybejici_fotky": [
+        "Detailní fotka podpaží a švů pro kontrolu molů a prošoupání.",
+        "Detail manžet zblízka v protisvětle kvůli drobným dírám od molů.",
+        "Fotka límce zblízka kvůli žmolkům a deformaci."
+      ],
+      "prodavajici": "ani2891, hodnocení 5/5, 389 recenzí; nízké riziko. Země nabídky CZ.",
+      "otazky_na_prodavajiciho": [
+        "Můžete poslat detailní fotky podpaží, manžet a límce v protisvětle kvůli molům?",
+        "Sedí podle velikosti L (šířka cca 48 cm, délka 61 cm), nebo je střih užší? Popis zmiňuje S-M, štítek je L.",
+        "Jaká je gramáž pleteniny (g/m²)?"
+      ],
+      "prirodna_vlakna_pct": 100
+    },
+    "model": "claude-haiku-5-5",
+    "pouziti": {
+      "effort": "medium",
+      "input_tokens": 9872,
+      "output_tokens": 1890,
+      "pokusu": 1
+    },
+    "foto": "https://images1.vinted.net/t/06_00eaa_pmoVu1NKfiknHWQnUMcr43Nz/f800/561af8d0.webp?s=8d872d2592b560c732485098ff36f675c6483901",
+    "beh_id": "2026-11-11T07:55:34.344Z",
+    "hodnoceno": "2026-11-11T07:56:15.848Z"
+  },
+  {
+    "id": "10748207047",
+    "kategorie": "merino",
+    "nazev": "Crane T-shirt z wełny Merino wool lana ciepły L casual cozy shirt merynos ciepły",
+    "url": "https://www.vinted.cz/items/10748207047-crane-t-shirt-z-welny-merino-wool-lana-cieply-l-casual-cozy-shirt-merynos-cieply",
+    "cena_celkem": "247.49 CZK",
+    "stav": {
+      "status_id": 2,
+      "limit_ceny_pct": 60
+    },
+    "navrzeny_verdikt": "NEKUPOVAT",
+    "verdikt": "NEKUPOVAT",
+    "upraveno_kodem": [],
+    "duvody": [
+      "Přírodní vlákna tvoří jen 50 % (merino a polyester 50/50), což je výrazně pod požadovanými 80 %.",
+      "Stav na fotkách vypadá dobře, ale materiálové kritérium je rozhodující a nelze ho přehlasovat.",
+      "Stáří modelu nelze z fotek ani štítku určit, takže ani tento aspekt nepomáhá rozhodnutí."
+    ],
+    "podrobnosti": {
+      "stari_modelu": {
+        "odhad": "nelze určit",
+        "od_let": null,
+        "do_let": null,
+        "jistota": "nejisté",
+        "z_ceho": "Štítek ani popis neuvádí sezónu ani rok výroby a střih ani logo nedávají spolehlivé vodítko."
+      },
+      "cena_nove": {
+        "od_kc": 700,
+        "do_kc": 1000,
+        "jistota": "nejisté",
+        "z_ceho": "Orientační odhad podle běžných cen podobných merino/polyesterových triček outdoorové značky Crane; aktuální cena modelu není známa.",
+        "pomer_ceny": {
+          "cena_celkem_kc": 247.49,
+          "pri_dolni_mezi_pct": 35,
+          "pri_horni_mezi_pct": 25
+        }
+      },
+      "izolace_material": "Není izolace. Složení podle štítku: 50 % merino vlna, 50 % polyester. Štítek uvádí velikost L 52/54.",
+      "stav_podle_fotek": "Na fotkách vypadá materiál čistě, bez viditelných děr, žmolků nebo zplstění; límec a celkový vzhled jsou v pořádku. Detailní kontrola podpaží a manžet chybí, takže případné prošoupání nelze vyloučit.",
+      "chybejici_fotky": [
+        "detail podpaží",
+        "detail manžet a spodního lemu při přiblížení",
+        "fotky v protisvětle kvůli případným dírám od molů"
+      ],
+      "prodavajici": "markoweciuszki777, hodnocení 5/5, 2018 recenzí, prodávající z Polska. Bez zjevných rizik, ale složení a stav nejsou popsány konkrétně.",
+      "otazky_na_prodavajiciho": [
+        "Můžete poslat fotky podpaží, manžet a spodního lemu při přiblížení?",
+        "Jsou na materiálu vidět díry od molů nebo zplstění po praní?"
+      ],
+      "prirodna_vlakna_pct": 50
+    },
+    "model": "claude-haiku-5-5",
+    "pouziti": {
+      "effort": "medium",
+      "input_tokens": 9486,
+      "output_tokens": 1698,
+      "pokusu": 1
+    },
+    "foto": "https://images1.vinted.net/t/06_007c6_qvNA5CCK1RifwmkJ7d2TRpPn/f800/a6b2ffd4.webp?s=73f8c9615831baf99575fc3d9e6ef206964cd5e7",
+    "beh_id": "2026-11-11T07:55:34.344Z",
+    "hodnoceno": "2026-11-11T07:56:24.904Z"
   }
 ]
