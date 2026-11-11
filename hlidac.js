@@ -15,6 +15,7 @@ const { ApifyClient } = require("apify-client");
 const Anthropic = require("@anthropic-ai/sdk");
 const { applyRules } = require("./pravidla.js");
 const { generatePage } = require("./stranka.js");
+const { buildNotification, sendNotification } = require("./ntfy.js");
 
 // ---------- Nastavení (tady se dá snadno měnit) ----------
 const ACTOR = "epicscrapers/vinted-search-scraper";
@@ -34,6 +35,9 @@ const PRICES = {
   "claude-haiku-5-5": { input: 0.1, output: 0.5 },
   "claude-sonnet-5-5": { input: 2.0, output: 10.0 },
 };
+// Kategorie, jejíž nabídky se NEHODNOTÍ Claudem a nepředvyřazují (např. knihy): jen se zobrazí na stránce
+// v sekci „Objevilo se!“ a pošle se o nich upozornění přes ntfy.
+const ALERT_CATEGORY = "upozornit";
 const modelFor = (category) => MODEL_BY_CATEGORY[category] || DEFAULT_MODEL;
 const EFFORT = "medium"; // hloubka přemýšlení (low / medium / high); teplotu modely Haiku 5.5 a Sonnet 5.5 nepřijímají
 const ALLOWED_STATUS_IDS = [6, 1, 2]; // 6 = nové s visačkou, 1 = nové bez visačky, 2 = velmi dobrý
@@ -360,6 +364,20 @@ async function evaluate(claude, criteria, item, category, options = {}) {
   return record;
 }
 
+// Zjednodušený záznam pro kategorii „upozornit“: bez hodnocení, jen to, co se ukazuje na stránce a v upozornění.
+function makeAlertRecord(item, behId) {
+  return {
+    id: String(item.id),
+    kategorie: ALERT_CATEGORY,
+    nazev: item.title,
+    url: item.url,
+    cena_celkem: item.total_item_price ? `${item.total_item_price.amount} ${item.total_item_price.currency_code}` : null,
+    foto: getPhotoUrls(item)[0] || null,
+    beh_id: behId || null,
+    hodnoceno: new Date().toISOString(), // stejné jméno pole jako u hodnocených, podle něj se počítá stáří
+  };
+}
+
 // ---------- Úklid starých dat ----------
 // Smaže z results.json a raw-items.json nabídky starší než MAX_AGE_DAYS.
 // seen.json se NEMAŽE, aby se staré nabídky, které se ještě objeví ve výsledcích Apify, znovu nehodnotily.
@@ -418,6 +436,8 @@ async function main() {
   const seen = new Set(readJson(SEEN_FILE, []));
   const results = readJson(RESULTS_FILE, []);
   const spend = {}; // spotřeba tokenů podle modelu (jen za tento běh)
+  const objevilo = []; // nové nabídky z kategorie „upozornit“ (pošle se o nich ntfy)
+  const koupit = []; // nové nabídky s konečným verdiktem KOUPIT (pošle se o nich ntfy)
 
   try {
     for (const search of readSearches()) {
@@ -435,6 +455,19 @@ async function main() {
           continue;
         }
 
+        // Kategorie „upozornit“: žádné předvyřazení ani hodnocení Claudem, jen uložit a upozornit.
+        if (search.category === ALERT_CATEGORY) {
+          const record = makeAlertRecord(item, run.id);
+          results.push(record);
+          objevilo.push(record);
+          run.nove++;
+          writeJson(RESULTS_FILE, results);
+          seen.add(id);
+          writeJson(SEEN_FILE, [...seen]);
+          console.log(`- ${id}: UPOZORNIT – ${item.title}`);
+          continue;
+        }
+
         const reason = prefilterReason(item, search.category);
         if (reason) {
           console.log(`- ${id}: vyřazeno předem (${reason})`);
@@ -447,6 +480,7 @@ async function main() {
           const record = await evaluate(claude, criteria, item, search.category, { behId: run.id });
           results.push(record);
           run.nove++;
+          if (record.verdikt === "KOUPIT") koupit.push(record);
           const s = (spend[record.model] = spend[record.model] || { input: 0, output: 0, nabidek: 0 });
           s.input += record.pouziti.input_tokens;
           s.output += record.pouziti.output_tokens;
@@ -483,6 +517,11 @@ async function main() {
     } catch (err) {
       console.error(`Stránku se nepodařilo vygenerovat: ${err.message}`);
     }
+    // Upozornění přes ntfy (i po chybě – nabídky už jsou uložené jako viděné, jinak by o nich nikdo nevěděl).
+    // sendNotification nikdy nevyhodí chybu.
+    const notification = buildNotification(objevilo, koupit);
+    if (notification) await sendNotification(notification);
+    else console.log("ntfy: nic nového, neposílám upozornění.");
   }
   console.log("Hotovo. Výsledky jsou v results.json, přehled v index.html");
 }

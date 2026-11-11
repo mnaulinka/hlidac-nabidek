@@ -65,6 +65,7 @@ jobs:
           # Klíče se berou ze Secrets (Settings → Secrets and variables → Actions). V logu se nezobrazí.
           APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }} # název kanálu pro upozornění (když chybí, upozornění se neposílají)
         run: node hlidac.js
 
       # Stav (co už hlídač viděl a výsledky) se uloží i po chybném běhu, ať se nic neztratí.

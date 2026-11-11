@@ -111,6 +111,7 @@
     .stitek.koupit    { background: var(--koupit-pozadi);    color: var(--koupit-text); }
     .stitek.zvazit    { background: var(--zvazit-pozadi);    color: var(--zvazit-text); }
     .stitek.nekupovat { background: var(--nekupovat-pozadi); color: var(--nekupovat-text); }
+    .stitek.objevilo-stitek { background: var(--barva-hlavni); color: #fff; }
 
     /* =====================================================================
        5) FILTR A OVLÁDÁNÍ
@@ -238,6 +239,12 @@
   </header>
 
   <main class="obsah">
+    <!-- Sekce „Objevilo se!“: nabídky z kategorie „upozornit“ (nehodnotí se), skrytá, dokud žádné nejsou -->
+    <details class="skupina" id="objevilo" open hidden>
+      <summary><span class="stitek objevilo-stitek">Objevilo se!</span><span class="pocet" id="objevilo-pocet"></span></summary>
+      <div class="seznam" id="objevilo-seznam"></div>
+    </details>
+
     <!-- Souhrn: velké „Nové: N“ + počty podle verdiktu, pod tím menším písmem celek -->
     <section class="souhrn" aria-live="polite">
       <div class="souhrn-velky">Nové: <span id="nove-pocet">0</span></div>
@@ -554,6 +561,38 @@
       });
     }
 
+    /* ---------- Sekce „Objevilo se!“: karta z téže šablony, bez hodnocení ---------- */
+    function vykresliObjevilo() {
+      const seznam = DATA.objevilo || [];
+      if (seznam.length === 0) return;                   // žádné nabídky = sekce zůstane skrytá
+      const nove = new Set(DATA.posledniBeh ? seznam.filter((n) => n.beh_id === DATA.posledniBeh.id).map((n) => n.id) : []);
+      const serazene = [...seznam].sort((a, b) => {
+        const rozdilNove = Number(nove.has(b.id)) - Number(nove.has(a.id));
+        return rozdilNove || b.hodnoceno.localeCompare(a.hodnoceno);
+      });
+      const kontejner = document.getElementById("objevilo-seznam");
+      serazene.forEach((n) => {
+        const prvek = document.getElementById("sablona-karty").content.firstElementChild.cloneNode(true);
+        if (nove.has(n.id)) {
+          prvek.classList.add("nova");
+          prvek.querySelector(".stitek-nove").hidden = false;
+        }
+        const foto = prvek.querySelector("img");
+        if (n.foto) { foto.src = n.foto; foto.alt = n.nazev; } else foto.remove();
+        prvek.querySelector(".karta-radek").remove();    // štítek verdiktu a kategorie tu nejsou
+        prvek.querySelector(".karta-nazev").textContent = n.nazev;
+        prvek.querySelector(".karta-cena").textContent = formatujCenuNabidky(n.cena_celkem);
+        prvek.querySelector(".duvody").remove();
+        prvek.querySelector(".podrobnosti").remove();
+        prvek.querySelector(".tlacitko-skryt").remove();
+        const odkaz = prvek.querySelector("a.tlacitko");
+        if (/^https:\/\//.test(n.url)) odkaz.href = n.url; else odkaz.remove();
+        kontejner.append(prvek);
+      });
+      document.getElementById("objevilo-pocet").textContent = `(${seznam.length}, nových ${nove.size})`;
+      document.getElementById("objevilo").hidden = false;
+    }
+
     /* ---------- Souhrn nahoře: nové nabídky z posledního běhu ---------- */
     function vykresliSouhrnNovych() {
       const beh = DATA.posledniBeh;
@@ -581,6 +620,7 @@
 
     /* ---------- Start ---------- */
     vykresliSouhrnNovych();
+    vykresliObjevilo();
     postavStranku();
     aktualizuj();
   </script>

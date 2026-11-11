@@ -25,7 +25,7 @@ Spouští se automaticky každé ráno přes GitHub Actions.
 Postup jednoho běhu (`node hlidac.js`):
 
 1. Úklid: smaže z `results.json` a `raw-items.json` záznamy starší než `MAX_AGE_DAYS` (7 dní).
-2. Pro každý řádek `searches.txt` (`kategorie;URL`, kategorie `bundy` a `merino`) spustí Apify actor
+2. Pro každý řádek `searches.txt` (`kategorie;URL`, kategorie `bundy`, `merino` a `upozornit`) spustí Apify actor
    `epicscrapers/vinted-search-scraper` (země `cz`, max 5 položek na hledání, `includeDetails` zapnuto).
 3. Přeskočí nabídky, které už jsou v `seen.json`.
 4. Předem vyřadí: velikost jinou než L / 40, stav horší než „Velmi dobrý“ (podle `status_id`, ne podle textu –
@@ -33,6 +33,12 @@ Postup jednoho běhu (`node hlidac.js`):
 5. Zbylé nabídky pošle do Claude API (popis, max 5 fotek, pokyny z `kriteria.md`) jako structured output (JSON podle schématu).
 6. `pravidla.js` zkontroluje navržený verdikt a případně ho **sníží** (nikdy nezvýší); poměr ceny počítá kód.
 7. Uloží do `results.json`, vygeneruje `index.html`, zapíše `last-run.json`.
+8. Pošle upozornění přes ntfy (`ntfy.js`): o nových nabídkách z kategorie `upozornit` a o nových s verdiktem KOUPIT
+   (jedna nabídka = jedna zpráva, víc = jedna souhrnná).
+
+Kategorie **`upozornit`** (např. knihy): nabídky se NEHODNOTÍ Claudem a neplatí pro ně předvyřazení; ukládají se
+zjednodušeně (název, cena, odkaz, fotka) a stránka je ukazuje nahoře v sekci „Objevilo se!“ (všechny ze 7 dní, nové
+se štítkem).
 
 ## Soubory
 
@@ -40,6 +46,7 @@ Postup jednoho běhu (`node hlidac.js`):
 |---|---|
 | `hlidac.js` | hlavní skript; nahoře nastavení (modely, počet položek, `MAX_AGE_DAYS`, schéma odpovědi) |
 | `pravidla.js` | pevná pravidla vynucovaná kódem (stáří, cena, složení merina, typ izolace) |
+| `ntfy.js` | upozornění přes ntfy; kanál z proměnné `NTFY_TOPIC` (Secrets / `.env`), `node ntfy.js --test` pošle zkoušku |
 | `stranka.js` + `sablona.html` | generátor přehledu; **vzhled se upravuje jen v `sablona.html`** (CSS proměnné nahoře) |
 | `index.html` | vygenerovaná stránka, **needitovat**, je v `.gitignore`, na web jde jako artefakt |
 | `kriteria.md` | pokyny pro Clauda (oddíl 1 = struktura výstupu) |
@@ -47,7 +54,7 @@ Postup jednoho běhu (`node hlidac.js`):
 | `seen.json`, `results.json`, `last-run.json` | stav mezi běhy (commitují se zpět do repozitáře) |
 | `raw-items.json` | surová data z Apify, jen lokálně (`.gitignore`) |
 | `prehodnoceni.js` | znovu ohodnotí nabídky z už proběhlých Apify běhů bez nového stahování (`node prehodnoceni.js bundy:ID merino:ID`) |
-| `test/` | testovací skripty (`test-modelu.js`, `stranka-test.js`, `uklid-test.js`); jejich výstupy jsou v `.gitignore` |
+| `test/` | testovací skripty (`test-modelu.js`, `stranka-test.js`, `uklid-test.js`, `upozornit-test.js`); jejich výstupy jsou v `.gitignore` |
 | `.github/workflows/hlidac.yml` | plánované spouštění a zveřejnění |
 | `.env` / `.env.example` | klíče lokálně (`.env` se nikdy nenahrává) / prázdná šablona |
 
@@ -88,8 +95,10 @@ Lokálně: `node hlidac.js` (celý běh, stojí peníze), `node stranka.js` (jen
 1. **Ověřit ranní běh:** v Actions má být jeden běh, který provede práci, a další ten den skončí „přeskakuji“.
    Plánované spuštění se zatím nikdy nepotvrdilo (11. 11. 2026 se starý plán nespustil vůbec); ručně spuštěný běh
    prošel. Ověřit i to, že pole `timezone` funguje.
-2. **Upozornění přes ntfy** pro kategorii „upozornit“ (podrobnosti dořešit s uživatelkou). Název kanálu (topic)
-   do GitHub Secrets (např. `NTFY_TOPIC`) a lokálně do `.env`, **nikdy do kódu ani README**.
+2. **Dokončit ntfy:** kód je hotový a zkušební zpráva odešla. Zbývá, aby uživatelka přihlásila kanál v aplikaci
+   ntfy a vložila stejný název do GitHub Secrets `NTFY_TOPIC` (lokálně je v `.env`; **nikdy do kódu ani README**).
+   Pak přidat do `searches.txt` první řádek `upozornit;URL` (při prvním běhu se všechny nabídky berou jako nové)
+   a ověřit skutečný běh.
 3. **Tlačítko „Kopírovat pro Clauda“** na kartě v `sablona.html` (zkopíruje data nabídky k vložení do chatu s Claudem).
 4. Dostat stránku pohodlně do telefonu (ověřit zobrazení na skutečném mobilu a trvalé ukládání „Skrýt“ v běžném prohlížeči).
 
