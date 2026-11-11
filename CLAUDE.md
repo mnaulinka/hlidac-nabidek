@@ -15,6 +15,10 @@
   ne SSH. Commity v tomto repozitáři jdou pod GitHub „noreply“ identitou (nastaveno lokálně v repu), nikdy pod
   osobním e-mailem.
 - Před `git push` vždy nejdřív `git pull` (stav po běhu commituje do `main` GitHub Actions).
+- **GitHub CLI (`gh`)** je nainstalovaný lokálně (přes winget) a přihlášený přes prohlížeč. Přes něj lze číst stav a logy
+  běhů (`gh run list`, `gh run view --log`) a ručně spouštět workflow (`gh workflow run hlidac.yml --ref main`).
+  Před každou akcí na GitHubu napiš uživatelce, co děláš (uživatelka si to výslovně přeje). Po instalaci může být
+  potřeba nový terminál, aby `gh` byl v PATH; jinak ho volej celou cestou.
 
 ## Co projekt dělá
 
@@ -69,7 +73,8 @@ Lokálně: `node hlidac.js` (celý běh, stojí peníze), `node stranka.js` (jen
   GitHub běhy na celou hodinu často zpožďuje nebo zahazuje). První krok čte `last-run.json`: pokud už dnes (pražské
   datum) proběhl úspěšný běh (`uspech: true`), plánovaný běh skončí. Ruční spuštění (`workflow_dispatch`) se provede
   vždy. Zda GitHub `timezone` opravdu respektuje, se teprve ověřuje.
-- Klíče se berou z **GitHub Secrets** `APIFY_TOKEN` a `ANTHROPIC_API_KEY` (v kódu `createClients()` čte proměnné
+- Klíče se berou z **GitHub Secrets** `APIFY_TOKEN`, `ANTHROPIC_API_KEY` a `NTFY_TOPIC` (kanál pro upozornění; když
+  chybí, upozornění se jen přeskočí a běh nespadne; v kódu `createClients()` čte proměnné
   prostředí a pak `.env`).
 - Po běhu workflow commitne `seen.json`, `results.json` a `last-run.json` zpět do `main` (i po chybném běhu).
 - Pages: zdroj „GitHub Actions“; nahrává se **jen `index.html`** (`_site/`), nic jiného z repozitáře na web nejde.
@@ -90,20 +95,27 @@ Lokálně: `node hlidac.js` (celý běh, stojí peníze), `node stranka.js` (jen
   a stránka je neukazuje. Stáří se počítá od chvíle, kdy je hlídač ohodnotil.
 - **`seen.json` se nikdy nemaže**, aby se staré nabídky, které se ještě objeví v Apify, znovu nehodnotily.
 - **Repozitář je veřejný** (kvůli bezplatným GitHub Pages) a uživatelka souhlasila s veřejným `kriteria.md`,
-  `searches.txt` i výsledky. Tajemství patří jen do Secrets a `.env`. Název kanálu pro ntfy půjde také do Secrets.
+  `searches.txt` i výsledky. Tajemství patří jen do Secrets a `.env`. Název kanálu pro ntfy je také jen v Secrets a `.env`.
 - Stránka je navržená především pro mobil; hlavní barva `#007782`, žádné logo ani název Vinted.
 
 ## Co zbývá
 
-1. **Ověřit ranní běh:** v Actions má být jeden běh, který provede práci, a další ten den skončí „přeskakuji“.
-   Plánované spuštění se zatím nikdy nepotvrdilo (11. 11. 2026 se starý plán nespustil vůbec); ručně spuštěný běh
-   prošel. Ověřit i to, že pole `timezone` funguje.
-2. **Dokončit ntfy:** kód je hotový a zkušební zpráva odešla. Zbývá, aby uživatelka přihlásila kanál v aplikaci
-   ntfy a vložila stejný název do GitHub Secrets `NTFY_TOPIC` (lokálně je v `.env`; **nikdy do kódu ani README**).
-   Pak přidat do `searches.txt` první řádek `upozornit;URL` (při prvním běhu se všechny nabídky berou jako nové)
-   a ověřit skutečný běh.
-3. **Tlačítko „Kopírovat pro Clauda“** na kartě v `sablona.html` (zkopíruje data nabídky k vložení do chatu s Claudem).
-4. Dostat stránku pohodlně do telefonu (ověřit zobrazení na skutečném mobilu a trvalé ukládání „Skrýt“ v běžném prohlížeči).
+1. **Ověřit ranní běh:** v Actions má být jeden plánovaný běh, který provede práci, a další ten den skončí
+   „přeskakuji“. Plánované spuštění se zatím nikdy nepotvrdilo (11. 11. 2026 se starý plán nespustil vůbec); ručně
+   spuštěné běhy prošly. Ověřit i to, že pole `timezone` funguje (běhy mají vznikat kolem 05:17–08:17 UTC). Na
+   12. 11. 2026 v 10:00 je naplánovaná jednorázová kontrola (jen čtení; běží, když je aplikace Claude otevřená).
+2. **Tlačítko „Kopírovat pro Clauda“** na kartě v `sablona.html` (zkopíruje data nabídky k vložení do chatu s Claudem).
+3. Dostat stránku pohodlně do telefonu (ověřit zobrazení na skutečném mobilu a trvalé ukládání „Skrýt“ v běžném
+   prohlížeči; ukládá se zvlášť v každém prohlížeči a zařízení).
+4. Nabídky `upozornit` se nijak nefiltrují: co vrátí hledání na Vintedu, to se ukáže (např. cizojazyčné inzeráty).
+   Když to bude rušit, zpřesnit odkaz hledání (velikost, stav) ve Vintedu.
+
+## Hotovo (listopad 2026)
+
+- **Plánování workflow:** čtyři spuštění denně s `timezone: "Europe/Prague"` a kontrolou podle `last-run.json`
+  (příznak `uspech`); zpožděný běh se nezahodí a dva běhy za den se neprovedou.
+- **Kategorie `upozornit`** se štítky (`upozornit:Štítek;URL`), sekce „Objevilo se!“, tlačítko „Skrýt“ i u těchto
+  karet, upozornění přes ntfy (funguje, ověřeno ostrým během i na telefonu uživatelky).
 
 ## Známé drobnosti
 
