@@ -5,10 +5,17 @@ name: Hlídač nabídek
 
 on:
   schedule:
-    # GitHub počítá čas v UTC. Praha je UTC+2 v létě a UTC+1 v zimě, proto dvě spuštění;
-    # první krok pozná, jestli je v Praze zrovna 6:00, a druhé spuštění ukončí.
-    - cron: "0 4 * * *"
-    - cron: "0 5 * * *"
+    # Čas je pražský (timezone), takže se letní/zimní čas řeší sám. Spouští se několikrát za sebou
+    # na „divné“ minuty (GitHub běhy na celou hodinu často zpožďuje nebo zahazuje).
+    # První spuštění, které proběhne, udělá práci; další ten den se samy přeskočí (viz první krok).
+    - cron: "17 6 * * *"
+      timezone: "Europe/Prague"
+    - cron: "17 7 * * *"
+      timezone: "Europe/Prague"
+    - cron: "17 8 * * *"
+      timezone: "Europe/Prague"
+    - cron: "17 9 * * *"
+      timezone: "Europe/Prague"
   workflow_dispatch: # ruční spuštění tlačítkem „Run workflow“ (hodinu nekontroluje)
 
 # Nikdy nesmí běžet dva běhy najednou (např. plán + ruční spuštění).
@@ -25,18 +32,21 @@ jobs:
     outputs:
       spustit: ${{ steps.cas.outputs.spustit }}
     steps:
-      - name: Je v Praze 6:00? (jen u plánovaného spuštění)
+      - uses: actions/checkout@v4
+
+      # U plánovaného spuštění: pokud už dnes (pražské datum) proběhl úspěšný běh, skončíme.
+      # Ruční spuštění se spustí vždy.
+      - name: Proběhl už dnes úspěšný běh? (jen u plánovaného spuštění)
         id: cas
         run: |
-          if [ "${{ github.event_name }}" = "schedule" ] && [ "$(TZ=Europe/Prague date +%H)" != "06" ]; then
-            echo "V Praze je $(TZ=Europe/Prague date +%H):xx, ne 6:00 – tento běh přeskakuji."
+          dnes=$(TZ=Europe/Prague date +%F)
+          posledni=$(node -e 'const r=JSON.parse(require("fs").readFileSync("last-run.json","utf8")); console.log(r.uspech===true && r.zacatek ? new Date(r.zacatek).toLocaleDateString("sv-SE",{timeZone:"Europe/Prague"}) : "")' 2>/dev/null || true)
+          if [ "${{ github.event_name }}" = "schedule" ] && [ "$posledni" = "$dnes" ]; then
+            echo "Dnešní běh ($dnes) už proběhl úspěšně – tento běh přeskakuji."
             echo "spustit=ne" >> "$GITHUB_OUTPUT"
           else
             echo "spustit=ano" >> "$GITHUB_OUTPUT"
           fi
-
-      - uses: actions/checkout@v4
-        if: steps.cas.outputs.spustit == 'ano'
 
       - uses: actions/setup-node@v4
         if: steps.cas.outputs.spustit == 'ano'

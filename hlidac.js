@@ -412,7 +412,7 @@ async function main() {
 
   // Údaje o tomto běhu; ID běhu se ukládá ke každé nově ohodnocené nabídce (podle něj stránka pozná „nové“).
   const startedAt = new Date().toISOString();
-  const run = { id: startedAt, zacatek: startedAt, konec: null, nalezeno: 0, nove: 0 };
+  const run = { id: startedAt, zacatek: startedAt, konec: null, nalezeno: 0, nove: 0, uspech: false };
   writeJson(LAST_RUN_FILE, run);
 
   const seen = new Set(readJson(SEEN_FILE, []));
@@ -472,6 +472,7 @@ async function main() {
       console.log(`Spotřeba ${model}: ${s.nabidek} nabídek, vstup ${s.input} tok., výstup ${s.output} tok.${usd !== null ? `, ≈ $${usd.toFixed(4)}` : ""}`);
     }
     if (totalUsd > 0) console.log(`Claude API celkem ≈ $${totalUsd.toFixed(4)}`);
+    run.uspech = true; // workflow podle toho pozná, že dnešní běh se povedl (pak další plánované běhy přeskočí)
   } finally {
     // I když běh skončí chybou, uložíme údaje o běhu a přegenerujeme stránku s tím, co už je hotové.
     run.konec = new Date().toISOString();
