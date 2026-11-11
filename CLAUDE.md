@@ -38,7 +38,8 @@ Postup jednoho běhu (`node hlidac.js`):
 
 Kategorie **`upozornit`** (např. knihy): nabídky se NEHODNOTÍ Claudem a neplatí pro ně předvyřazení; ukládají se
 zjednodušeně (název, cena, odkaz, fotka) a stránka je ukazuje nahoře v sekci „Objevilo se!“ (všechny ze 7 dní, nové
-se štítkem).
+se štítkem). V `searches.txt` jde za `upozornit` dvojtečka a štítek (`upozornit:Knihy;URL`): podle něj se nabídky
+seskupí na stránce (nadpisy skupin, „Ostatní“ dole) i v souhrnné ntfy zprávě; řádek bez štítku jde do „Ostatní“.
 
 ## Soubory
 

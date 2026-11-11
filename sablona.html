@@ -112,6 +112,7 @@
     .stitek.zvazit    { background: var(--zvazit-pozadi);    color: var(--zvazit-text); }
     .stitek.nekupovat { background: var(--nekupovat-pozadi); color: var(--nekupovat-text); }
     .stitek.objevilo-stitek { background: var(--barva-hlavni); color: #fff; }
+    .objevilo-nadpis { margin: 16px 0 8px; font-size: 1rem; color: var(--barva-hlavni-tmava); }
 
     /* =====================================================================
        5) FILTR A OVLÁDÁNÍ
@@ -570,8 +571,29 @@
         const rozdilNove = Number(nove.has(b.id)) - Number(nove.has(a.id));
         return rozdilNove || b.hodnoceno.localeCompare(a.hodnoceno);
       });
-      const kontejner = document.getElementById("objevilo-seznam");
+      // Skupiny podle štítku z searches.txt: podle abecedy, „Ostatní“ (bez štítku) úplně dole.
+      const OSTATNI = "Ostatní";
+      const skupinyObjevilo = {};
       serazene.forEach((n) => {
+        const nazev = n.stitek || OSTATNI;
+        if (!skupinyObjevilo[nazev]) {
+          const nadpis = el("h3", "objevilo-nadpis");
+          const seznamSkupiny = el("div", "seznam");
+          skupinyObjevilo[nazev] = { nadpis, seznam: seznamSkupiny, pocet: 0 };
+        }
+        skupinyObjevilo[nazev].pocet++;
+      });
+      const hlavni = document.getElementById("objevilo-seznam");
+      hlavni.className = "";                              // skupiny mají vlastní .seznam
+      Object.keys(skupinyObjevilo)
+        .sort((a, b) => (a === OSTATNI) - (b === OSTATNI) || a.localeCompare(b, "cs"))
+        .forEach((nazev) => {
+          const s = skupinyObjevilo[nazev];
+          s.nadpis.textContent = `${nazev} (${s.pocet})`;
+          hlavni.append(s.nadpis, s.seznam);
+        });
+      serazene.forEach((n) => {
+        const kontejner = skupinyObjevilo[n.stitek || OSTATNI].seznam;
         const prvek = document.getElementById("sablona-karty").content.firstElementChild.cloneNode(true);
         if (nove.has(n.id)) {
           prvek.classList.add("nova");

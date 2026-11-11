@@ -42,7 +42,7 @@ function buildNotification(objevilo, koupit) {
   if (total === 1) {
     const offer = (objevilo[0] || koupit[0]);
     return {
-      title: objevilo.length === 1 ? "Objevilo se!" : "KOUPIT",
+      title: objevilo.length === 1 ? (offer.stitek ? `Objevilo se: ${offer.stitek}` : "Objevilo se!") : "KOUPIT",
       message: offerLine(offer),
       click: safeUrl(offer.url),
     };
@@ -50,7 +50,16 @@ function buildNotification(objevilo, koupit) {
 
   // Víc nabídek = jedna souhrnná zpráva; klepnutí otevře přehled.
   const parts = [];
-  if (objevilo.length > 0) parts.push(`OBJEVILO SE (${objevilo.length}):\n` + objevilo.map(offerLine).join("\n\n"));
+  // Nabídky „Objevilo se“ se seskupí podle štítku z searches.txt (bez štítku = „Ostatní“), v pořadí prvního výskytu.
+  const groups = new Map();
+  for (const offer of objevilo) {
+    const name = offer.stitek || "Ostatní";
+    if (!groups.has(name)) groups.set(name, []);
+    groups.get(name).push(offer);
+  }
+  for (const [name, offers] of groups) {
+    parts.push(`${name.toUpperCase()} (${offers.length}):\n` + offers.map(offerLine).join("\n\n"));
+  }
   if (koupit.length > 0) parts.push(`KOUPIT (${koupit.length}):\n` + koupit.map(offerLine).join("\n\n"));
   let message = parts.join("\n\n");
   if (Buffer.byteLength(message, "utf8") > MAX_MESSAGE_BYTES) {

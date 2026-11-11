@@ -93,7 +93,8 @@ function createClients() {
   };
 }
 
-// Řádky searches.txt: "kategorie;URL"
+// Řádky searches.txt: "kategorie;URL". U kategorie "upozornit" jde za názvem kategorie dvojtečka a štítek,
+// podle kterého se nabídky na stránce a v upozornění seskupí: "upozornit:Knihy;URL".
 function readSearches() {
   return fs
     .readFileSync(SEARCHES_FILE, "utf8")
@@ -102,7 +103,13 @@ function readSearches() {
     .filter((line) => line && !line.startsWith("#"))
     .map((line) => {
       const i = line.indexOf(";");
-      return { category: line.slice(0, i).trim(), url: line.slice(i + 1).trim() };
+      const head = line.slice(0, i);
+      const j = head.indexOf(":");
+      return {
+        category: (j === -1 ? head : head.slice(0, j)).trim(),
+        label: j === -1 ? "" : head.slice(j + 1).trim(), // štítek (může být prázdný)
+        url: line.slice(i + 1).trim(),
+      };
     });
 }
 
@@ -365,10 +372,11 @@ async function evaluate(claude, criteria, item, category, options = {}) {
 }
 
 // Zjednodušený záznam pro kategorii „upozornit“: bez hodnocení, jen to, co se ukazuje na stránce a v upozornění.
-function makeAlertRecord(item, behId) {
+function makeAlertRecord(item, behId, label) {
   return {
     id: String(item.id),
     kategorie: ALERT_CATEGORY,
+    stitek: label || "", // štítek z searches.txt (např. "Knihy"); prázdný = skupina „Ostatní“
     nazev: item.title,
     url: item.url,
     cena_celkem: item.total_item_price ? `${item.total_item_price.amount} ${item.total_item_price.currency_code}` : null,
@@ -457,7 +465,7 @@ async function main() {
 
         // Kategorie „upozornit“: žádné předvyřazení ani hodnocení Claudem, jen uložit a upozornit.
         if (search.category === ALERT_CATEGORY) {
-          const record = makeAlertRecord(item, run.id);
+          const record = makeAlertRecord(item, run.id, search.label);
           results.push(record);
           objevilo.push(record);
           run.nove++;
