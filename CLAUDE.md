@@ -116,12 +116,15 @@ Lokálně: `node hlidac.js` (celý běh, stojí peníze), `node stranka.js` (jen
 
 ## Hotovo (listopad 2026)
 
-- **Plánování workflow:** čtyři spuštění denně s `timezone: "Europe/Prague"` a kontrolou podle `last-run.json`
-  (příznak `uspech`); zpožděný běh se nezahodí a dva běhy za den se neprovedou.
+- **Plánování workflow:** osm spuštění denně (přes noc i ráno) s `timezone: "Europe/Prague"` a kontrolou podle
+  `last-run.json` (úspěšný běh v posledních 16 hodinách → plánovaný běh se přeskočí); zpožděný běh se nezahodí
+  a dva běhy za den se neprovedou.
 - **Kategorie `upozornit`** se štítky (`upozornit:Štítek;URL`), sekce „Objevilo se!“, tlačítko „Skrýt“ i u těchto
   karet, upozornění přes ntfy (funguje, ověřeno ostrým během i na telefonu uživatelky).
-
-- **Ikona stránky** (favicon, apple-touch-icon, manifest) je ve složce `ikony/`; odkazy jsou v `<head>` šablony.
+- **Ikona stránky** (lupa na #007782): SVG, PNG 32/180/192/512 a `manifest.webmanifest` ve složce `ikony/`, odkazy
+  jsou v `<head>` šablony, workflow je nahrává na web. Na živém webu ověřeno (všechny soubory vrací HTTP 200).
+  Na skutečném telefonu („Přidat na plochu“) a v záložce prohlížeče zatím neověřeno; prohlížeče si favicon
+  drží v mezipaměti, takže se může ukazovat stará.
 
 ## Známé drobnosti
 
