@@ -91,12 +91,13 @@ jobs:
             git push
           fi
 
-      # Na web se nahraje JEN index.html (nic jiného z repozitáře).
+      # Na web se nahraje JEN index.html, manifest.webmanifest a obrázky ikony (nic jiného z repozitáře).
       - name: Připravit stránku pro GitHub Pages
         if: steps.cas.outputs.spustit == 'ano'
         run: |
-          mkdir _site
-          cp index.html _site/
+          mkdir -p _site/ikony
+          cp index.html manifest.webmanifest _site/
+          cp ikony/*.svg ikony/*.png _site/ikony/ # jen obrázky ikony, ne skript vytvor-ikony.js
 
       - uses: actions/upload-pages-artifact@v3
         if: steps.cas.outputs.spustit == 'ano'

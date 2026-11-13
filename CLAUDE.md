@@ -56,6 +56,7 @@ i celá sekce se při skrytí všeho schová.
 | `ntfy.js` | upozornění přes ntfy; kanál z proměnné `NTFY_TOPIC` (Secrets / `.env`), `node ntfy.js --test` pošle zkoušku |
 | `stranka.js` + `sablona.html` | generátor přehledu; **vzhled se upravuje jen v `sablona.html`** (CSS proměnné nahoře) |
 | `index.html` | vygenerovaná stránka, **needitovat**, je v `.gitignore`, na web jde jako artefakt |
+| `ikony/`, `manifest.webmanifest` | ikona stránky (lupa na #007782): SVG + PNG 32/180/192/512 a manifest pro „Přidat na plochu“; ikony vyrobí `node ikony/vytvor-ikony.js` (barva a tvar nahoře ve skriptu), na web je nahrává workflow |
 | `kriteria.md` | pokyny pro Clauda (oddíl 1 = struktura výstupu) |
 | `searches.txt` | odkazy na hledání |
 | `seen.json`, `results.json`, `last-run.json` | stav mezi běhy (commitují se zpět do repozitáře) |
@@ -80,7 +81,8 @@ Lokálně: `node hlidac.js` (celý běh, stojí peníze), `node stranka.js` (jen
   chybí, upozornění se jen přeskočí a běh nespadne; v kódu `createClients()` čte proměnné
   prostředí a pak `.env`).
 - Po běhu workflow commitne `seen.json`, `results.json` a `last-run.json` zpět do `main` (i po chybném běhu).
-- Pages: zdroj „GitHub Actions“; nahrává se **jen `index.html`** (`_site/`), nic jiného z repozitáře na web nejde.
+- Pages: zdroj „GitHub Actions“; nahrává se **jen `index.html`, `manifest.webmanifest` a obrázky ikony ze složky `ikony/`**
+  (`_site/`), nic jiného z repozitáře na web nejde.
   Prostředí `github-pages` musí mít povolenou větev `main` (Settings → Environments).
 - Web: https://mnaulinka.github.io/hlidac-nabidek/
 
@@ -118,6 +120,8 @@ Lokálně: `node hlidac.js` (celý běh, stojí peníze), `node stranka.js` (jen
   (příznak `uspech`); zpožděný běh se nezahodí a dva běhy za den se neprovedou.
 - **Kategorie `upozornit`** se štítky (`upozornit:Štítek;URL`), sekce „Objevilo se!“, tlačítko „Skrýt“ i u těchto
   karet, upozornění přes ntfy (funguje, ověřeno ostrým během i na telefonu uživatelky).
+
+- **Ikona stránky** (favicon, apple-touch-icon, manifest) je ve složce `ikony/`; odkazy jsou v `<head>` šablony.
 
 ## Známé drobnosti
 
