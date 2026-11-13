@@ -69,10 +69,13 @@ Lokálně: `node hlidac.js` (celý běh, stojí peníze), `node stranka.js` (jen
 
 ## Workflow a GitHub Pages
 
-- `hlidac.yml` se spouští čtyřikrát denně v 6:17, 7:17, 8:17 a 9:17 (cron s polem `timezone: "Europe/Prague"`,
-  GitHub běhy na celou hodinu často zpožďuje nebo zahazuje). První krok čte `last-run.json`: pokud už dnes (pražské
-  datum) proběhl úspěšný běh (`uspech: true`), plánovaný běh skončí. Ruční spuštění (`workflow_dispatch`) se provede
-  vždy. Zda GitHub `timezone` opravdu respektuje, se teprve ověřuje.
+- `hlidac.yml` má osm plánovaných termínů denně v pražském čase (cron s polem `timezone: "Europe/Prague"`): noční
+  22:17, 00:17, 02:17, 04:17 a ranní 6:17, 7:17, 8:17, 9:17. **Důvod:** GitHub plánované běhy tohoto repozitáře
+  posouvá o mnoho hodin (11.–13. 11. 2026 vznikly až odpoledne, někdy vůbec), proto jsou termíny i přes noc – i se
+  zpožděním má být běh hotový ráno. První krok čte `last-run.json`: pokud v posledních **16 hodinách** proběhl
+  úspěšný běh (`uspech: true`), plánovaný běh skončí („přeskakuji“). Ruční spuštění (`workflow_dispatch`) se provede
+  vždy. Zda noční termíny opravdu pomáhají a zda GitHub `timezone` respektuje, se teprve ověřuje (záloha: úloha
+  v aplikaci Claude, která spustí `gh workflow run`, když ten den žádný běh neproběhl – zatím nenastaveno).
 - Klíče se berou z **GitHub Secrets** `APIFY_TOKEN`, `ANTHROPIC_API_KEY` a `NTFY_TOPIC` (kanál pro upozornění; když
   chybí, upozornění se jen přeskočí a běh nespadne; v kódu `createClients()` čte proměnné
   prostředí a pak `.env`).
@@ -100,10 +103,9 @@ Lokálně: `node hlidac.js` (celý běh, stojí peníze), `node stranka.js` (jen
 
 ## Co zbývá
 
-1. **Ověřit ranní běh:** v Actions má být jeden plánovaný běh, který provede práci, a další ten den skončí
-   „přeskakuji“. Plánované spuštění se zatím nikdy nepotvrdilo (11. 11. 2026 se starý plán nespustil vůbec); ručně
-   spuštěné běhy prošly. Ověřit i to, že pole `timezone` funguje (běhy mají vznikat kolem 05:17–08:17 UTC). Na
-   12. 11. 2026 v 10:00 je naplánovaná jednorázová kontrola (jen čtení; běží, když je aplikace Claude otevřená).
+1. **Ověřit plánované běhy:** zjistit z `gh run list`, v kolik hodin skutečně vznikají plánované běhy po přidání nočních
+   termínů (od 13. 11. 2026) a zda je data hotová ráno. Zpoždění GitHubu bylo dosud hodiny až celý den. Když noc
+   nepomůže, nastavit záložní spuštění z počítače (úloha v aplikaci Claude, jen při otevřené aplikaci).
 2. **Tlačítko „Kopírovat pro Clauda“** na kartě v `sablona.html` (zkopíruje data nabídky k vložení do chatu s Claudem).
 3. Dostat stránku pohodlně do telefonu (ověřit zobrazení na skutečném mobilu a trvalé ukládání „Skrýt“ v běžném
    prohlížeči; ukládá se zvlášť v každém prohlížeči a zařízení).

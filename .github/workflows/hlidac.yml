@@ -1,13 +1,22 @@
-# Každé ráno kolem 6:00 (Praha) spustí hlidac.js, uloží stav zpět do repozitáře
+# Každý den (přes noc a ráno, viz časy níže) spustí hlidac.js, uloží stav zpět do repozitáře
 # a zveřejní přehled (index.html) přes GitHub Pages.
 # Ruční spuštění na zkoušku: záložka Actions -> Hlídač nabídek -> Run workflow.
 name: Hlídač nabídek
 
 on:
   schedule:
-    # Čas je pražský (timezone), takže se letní/zimní čas řeší sám. Spouští se několikrát za sebou
-    # na „divné“ minuty (GitHub běhy na celou hodinu často zpožďuje nebo zahazuje).
-    # První spuštění, které proběhne, udělá práci; další ten den se samy přeskočí (viz první krok).
+    # Čas je pražský (timezone), takže se letní/zimní čas řeší sám. Spouští se víckrát za sebou na „divné“ minuty.
+    # GitHub plánované běhy tohoto repozitáře posouvá o mnoho hodin (11.–13. 11. 2026 přišly až odpoledne), proto
+    # jsou termíny i přes noc: i se zpožděním by měl být běh hotový ráno. První spuštění, které proběhne, udělá práci;
+    # další se samy přeskočí (viz první krok). Zda noční termíny pomáhají, se teprve ověřuje.
+    - cron: "17 22 * * *"
+      timezone: "Europe/Prague"
+    - cron: "17 0 * * *"
+      timezone: "Europe/Prague"
+    - cron: "17 2 * * *"
+      timezone: "Europe/Prague"
+    - cron: "17 4 * * *"
+      timezone: "Europe/Prague"
     - cron: "17 6 * * *"
       timezone: "Europe/Prague"
     - cron: "17 7 * * *"
@@ -34,15 +43,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # U plánovaného spuštění: pokud už dnes (pražské datum) proběhl úspěšný běh, skončíme.
+      # U plánovaného spuštění: pokud v posledních 16 hodinách proběhl úspěšný běh (last-run.json), skončíme.
       # Ruční spuštění se spustí vždy.
-      - name: Proběhl už dnes úspěšný běh? (jen u plánovaného spuštění)
+      - name: Proběhl v posledních 16 hodinách úspěšný běh? (jen u plánovaného spuštění)
         id: cas
         run: |
-          dnes=$(TZ=Europe/Prague date +%F)
-          posledni=$(node -e 'const r=JSON.parse(require("fs").readFileSync("last-run.json","utf8")); console.log(r.uspech===true && r.zacatek ? new Date(r.zacatek).toLocaleDateString("sv-SE",{timeZone:"Europe/Prague"}) : "")' 2>/dev/null || true)
-          if [ "${{ github.event_name }}" = "schedule" ] && [ "$posledni" = "$dnes" ]; then
-            echo "Dnešní běh ($dnes) už proběhl úspěšně – tento běh přeskakuji."
+          stari_hodin=$(node -e 'const r=JSON.parse(require("fs").readFileSync("last-run.json","utf8")); console.log(r.uspech===true && r.zacatek ? ((Date.now()-Date.parse(r.zacatek))/3600000).toFixed(1) : "")' 2>/dev/null || true)
+          if [ "${{ github.event_name }}" = "schedule" ] && [ -n "$stari_hodin" ] && awk "BEGIN{exit !($stari_hodin < 16)}"; then
+            echo "Poslední úspěšný běh byl před $stari_hodin h – tento běh přeskakuji."
             echo "spustit=ne" >> "$GITHUB_OUTPUT"
           else
             echo "spustit=ano" >> "$GITHUB_OUTPUT"
