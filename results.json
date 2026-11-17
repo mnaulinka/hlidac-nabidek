@@ -6801,5 +6801,371 @@
     "foto": "https://images1.vinted.net/tc/01_00a3e_WMNguLjWhSt6jTwTBRiqhq1d/bb7fe131.webp?s=973053ab8dfecc752f5cd340ce8ea0c88d684f7f",
     "beh_id": "2026-11-16T18:28:31.204Z",
     "hodnoceno": "2026-11-16T18:32:14.634Z"
+  },
+  {
+    "id": "10838767404",
+    "kategorie": "merino",
+    "nazev": "Bluzka merino wool ecru koronkowy golf perłowe guziki L XL",
+    "url": "https://www.vinted.cz/items/10838767404-bluzka-merino-wool-ecru-koronkowy-golf-perlowe-guziki-l-xl",
+    "cena_celkem": "365.71 CZK",
+    "stav": {
+      "status_id": 2,
+      "limit_ceny_pct": 60
+    },
+    "navrzeny_verdikt": "ZVÁŽIT",
+    "verdikt": "ZVÁŽIT",
+    "upraveno_kodem": [],
+    "duvody": [
+      "Složení není uvedeno a z fotek nejde spolehlivě poznat, zda jde o merino, takže nelze ověřit hlavní kritérium pro kategorii.",
+      "Na fotkách nejsou vidět zjevné díry, žmolky ani vytahané části, ale rozlišení nestačí na spolehlivé odhalení molů.",
+      "Popis chybí úplně a prodávající nemá žádné hodnocení ani recenze, takže nelze posoudit spolehlivost prodávajícího."
+    ],
+    "podrobnosti": {
+      "stari_modelu": {
+        "odhad": "nelze určit",
+        "od_let": null,
+        "do_let": null,
+        "jistota": "nejisté",
+        "z_ceho": "Na fotkách není štítek s datem ani sezónou a model není z vizuálu jednoznačně identifikovatelný. Design s krajkovým límcem a perlovými knoflíky může patřit do různých let."
+      },
+      "cena_nove": {
+        "od_kc": 500,
+        "do_kc": 1200,
+        "jistota": "nejisté",
+        "z_ceho": "Model ani značka Smile nejsou spolehlivě známé, takže jde jen o hrubý odhad podle typu zboží (dámská jemná pletená halenka s krajkou a perlovými knoflíky). Cena nové věci nesmí být hlavním důvodem verdiktu.",
+        "pomer_ceny": {
+          "cena_celkem_kc": 365.71,
+          "pri_dolni_mezi_pct": 73,
+          "pri_horni_mezi_pct": 30
+        }
+      },
+      "izolace_material": "Izolace neuvedena (netýká se). Materiál neuvedeno ve štítku ani v inzerátu. Z fotek jde o velmi jemnou, lehce průsvitnou pleteninu krémové barvy, límec a manžety zdobené krajkou a perlovými knoflíky. Složení neuvedeno.",
+      "stav_podle_fotek": "Na fotkách nejsou vidět zjevné skvrny, díry ani výrazné žmolky, krajka vypadá celá a manžety jsou čisté. Rozlišení však nestačí na spolehlivé posouzení molů a drobného poškození, což je u merina klíčové. Prodávající uvádí Velmi dobrý stav, což fotky neodporují.",
+      "chybejici_fotky": [
+        "Detail štítku se složením a údaji o praní",
+        "Detail podpaží a spodní části rukávů v dobrém osvětlení (kvůli molům)",
+        "Detail krajkového límce a lemů manžet (zda nejsou vytažené nebo poškozené)",
+        "Zadní strana a celkový pohled zblízka na pleteninu proti světlu"
+      ],
+      "prodavajici": "Prodávající rogowskadorota124 nemá zobrazené hodnocení ani počet recenzí, takže jeho spolehlivost nelze posoudit. Popis chybí úplně, nabídka obsahuje jen název a fotky.",
+      "otazky_na_prodavajiciho": [
+        "Z jakého materiálu je blůzka vyrobena? Je to 100% merino nebo směs, a jaké je přesné složení?",
+        "Jaké jsou rozměry (šířka v hrudi, délka, délka rukávu) a odpovídají velikosti L?",
+        "Má blůzka díry od molů, žmolky nebo vytažené nitě, zejména v podpaží a na manžetách?",
+        "Je na krajce nebo perlových knoflících nějaké poškození nebo chybějící knoflík?",
+        "Jak dlouho a jak často jste blůzku nosila a jak se pere (ruční praní, strojové)?",
+        "Jakého roku nebo sezóny je model a kde jste ho kupovala?"
+      ],
+      "prirodna_vlakna_pct": null
+    },
+    "model": "claude-haiku-5-5",
+    "pouziti": {
+      "effort": "medium",
+      "input_tokens": 8667,
+      "output_tokens": 2104,
+      "pokusu": 1
+    },
+    "foto": "https://images1.vinted.net/tc/06_00727_kDtDejFdBHPPCRsFTqMGopkN/9d347e83.webp?s=5620b771ee6b5de80d2519d68af58042cc1a74f7",
+    "beh_id": "2026-11-17T11:47:21.046Z",
+    "hodnoceno": "2026-11-17T11:47:47.349Z"
+  },
+  {
+    "id": "10841453692",
+    "kategorie": "merino",
+    "nazev": "Devold Duo Active Koszulka Termoaktywna Merino Zip Damska L",
+    "url": "https://www.vinted.cz/items/10841453692-devold-duo-active-koszulka-termoaktywna-merino-zip-damska-l",
+    "cena_celkem": "206.59 CZK",
+    "stav": {
+      "status_id": 2,
+      "limit_ceny_pct": 60
+    },
+    "navrzeny_verdikt": "ZVÁŽIT",
+    "verdikt": "ZVÁŽIT",
+    "upraveno_kodem": [],
+    "duvody": [
+      "Složení není uvedeno ani na fotkách, ani v popisu, a u tohoto modelu bývá vedle merina i syntetická složka, takže přírodních vláken může být méně než 80 %.",
+      "Popis prodávajícího chybí a prodávající nemá žádné hodnocení ani recenze, což je riziko.",
+      "Na fotkách nejsou vidět štítek ani detaily manžet, podpaží a zipu, takže stav nelze spolehlivě ověřit."
+    ],
+    "podrobnosti": {
+      "stari_modelu": {
+        "odhad": "nelze určit",
+        "od_let": null,
+        "do_let": null,
+        "jistota": "nejisté",
+        "z_ceho": "Na fotkách není štítek s datem ani sezónou a z fotek nelze spolehlivě určit ročník modelu."
+      },
+      "cena_nove": {
+        "od_kc": 1500,
+        "do_kc": 2200,
+        "jistota": "nejisté",
+        "z_ceho": "Odhad orientačního rozmezí pro dámský merino zip top značky Devold v řadě Duo Active. Přesnou aktuální cenu nemám ověřenou.",
+        "pomer_ceny": {
+          "cena_celkem_kc": 206.59,
+          "pri_dolni_mezi_pct": 14,
+          "pri_horni_mezi_pct": 9
+        }
+      },
+      "izolace_material": "Typ izolace: bez izolace (funkční termoprádlo). Materiál: neuvedeno. Složení: neuvedeno. Gramáž: neuvedeno.",
+      "stav_podle_fotek": "Na fotkách vypadá kus čistě a bez viditelných děr, skvrn nebo žmolků. Detaily manžet, podpaží a zipu nejsou dostatečně zachycené, takže drobné opotřebení nelze vyloučit. Rozměry nejsou uvedeny.",
+      "chybejici_fotky": [
+        "Štítek se složením materiálu a velikostí",
+        "Detail podpaží a švů",
+        "Detail manžet a lemu",
+        "Detail zipu a límce",
+        "Detailní fotka v protisvětle kvůli případným dírám od molů"
+      ],
+      "prodavajici": "Uživatel johnixx1989, hodnocení neuvedeno, počet recenzí neuveden. Popis chybí úplně. Vysoké riziko, že prodávající nemá prokázanou historii prodeje.",
+      "otazky_na_prodavajiciho": [
+        "Jaké je přesné složení materiálu (podíl merina a dalších vláken)?",
+        "Z jaké sezóny kus pochází a kdy byl koupen?",
+        "Můžete poslat fotku štítku se složením a velikostí?",
+        "Můžete poslat detailní fotky podpaží, manžet, límce a zipu?",
+        "Jsou na kusu nějaké díry od molů, žmolky nebo zplstění?",
+        "Jaké jsou přesné rozměry (šířka v hrudi, délka)?"
+      ],
+      "prirodna_vlakna_pct": null
+    },
+    "model": "claude-haiku-5-5",
+    "pouziti": {
+      "effort": "medium",
+      "input_tokens": 9132,
+      "output_tokens": 1766,
+      "pokusu": 1
+    },
+    "foto": "https://images1.vinted.net/tc/01_0048e_zfbEado93Tgf99Jr54mHwvK7/befa6e8d.webp?s=f58392f7fcf2241966110f6459cc029ace9614ce",
+    "beh_id": "2026-11-17T11:47:21.046Z",
+    "hodnoceno": "2026-11-17T11:48:02.255Z"
+  },
+  {
+    "id": "10851208124",
+    "kategorie": "merino",
+    "nazev": "Damska koszulka termoaktywna Devold Merino Performance r. L stan bdb",
+    "url": "https://www.vinted.cz/items/10851208124-damska-koszulka-termoaktywna-devold-merino-performance-r-l-stan-bdb",
+    "cena_celkem": "577.87 CZK",
+    "stav": {
+      "status_id": 2,
+      "limit_ceny_pct": 60
+    },
+    "navrzeny_verdikt": "ZVÁŽIT",
+    "verdikt": "ZVÁŽIT",
+    "upraveno_kodem": [],
+    "duvody": [
+      "Složení materiálu není uvedeno ani na fotkách čitelné, takže nelze ověřit, že merino tvoří dostatečný podíl přírodních vláken.",
+      "Na jediné fotce přední strany nejsou vidět žádné zjevné díry ani skvrny, ale podpaží, manžety a lem nejsou dofočené, takže stav nelze spolehlivě posoudit.",
+      "Prodávající nepřidal žádný popis a jeho hodnocení ani počet recenzí nejsou k dispozici."
+    ],
+    "podrobnosti": {
+      "stari_modelu": {
+        "odhad": "nelze určit",
+        "od_let": null,
+        "do_let": null,
+        "jistota": "nejisté",
+        "z_ceho": "Na fotkách není viditelný štítek s datem ani sezónou a popis chybí."
+      },
+      "cena_nove": {
+        "od_kc": 1200,
+        "do_kc": 2200,
+        "jistota": "nejisté",
+        "z_ceho": "Odhad orientační podle běžných cen merino triček značky Devold v této kategorii; přesný aktuální model a cena nejsou známy.",
+        "pomer_ceny": {
+          "cena_celkem_kc": 577.87,
+          "pri_dolni_mezi_pct": 48,
+          "pri_horni_mezi_pct": 26
+        }
+      },
+      "izolace_material": "Neuvedeno; jde o merino tričko bez izolace. Složení ani gramáž nejsou uvedeny, na fotce je štítek nečitelný.",
+      "stav_podle_fotek": "Na fotce je tričko tmavě modrozelené s viditelnými vráskami, které pravděpodobně vznikly skladováním nebo složením. Nejsou vidět zjevné díry, žmolky ani skvrny, ale rozlišení je nízké a detaily nejsou jasné. Stav odpovídá označení velmi dobrý, ale nelze ho potvrdit.",
+      "chybejici_fotky": [
+        "Detail štítku se složením a údajem o materiálu",
+        "Podpaží a boční švy",
+        "Manžety rukávů a spodní lem",
+        "Detail v protisvětle kvůli dírám od molů",
+        "Detailní záběr přední strany při dobrém osvětlení"
+      ],
+      "prodavajici": "Prodávající monikapolewska1004 nemá popis ani uvedené hodnocení ani počet recenzí, takže nelze posoudit jeho spolehlivost.",
+      "otazky_na_prodavajiciho": [
+        "Jaké přesné složení má tričko (kolik procent merina a jaká další vlákna)?",
+        "Z jaké sezóny nebo kdy přibližně bylo tričko koupeno?",
+        "Můžete poslat fotky podpaží, manžet a spodního lemu?",
+        "Jsou na tričku nějaké díry od molů, žmolky nebo vybledlé místa?",
+        "Jak často a jakým způsobem bylo tričko praní a nošeno?"
+      ],
+      "prirodna_vlakna_pct": null
+    },
+    "model": "claude-haiku-5-5",
+    "pouziti": {
+      "effort": "medium",
+      "input_tokens": 9134,
+      "output_tokens": 1732,
+      "pokusu": 1
+    },
+    "foto": "https://images1.vinted.net/tc/02_0033f_hXLSNW8vejztL2W3EZk29xqd/4f20a973.webp?s=c2e199af843674eddf1ec06632d6dac506d8cb6b",
+    "beh_id": "2026-11-17T11:47:21.046Z",
+    "hodnoceno": "2026-11-17T11:48:13.047Z"
+  },
+  {
+    "id": "10844086658",
+    "kategorie": "merino",
+    "nazev": "Termoaktywna bluzka z długim rękawem wełna merino Devold Duo Active L",
+    "url": "https://www.vinted.cz/items/10844086658-termoaktywna-bluzka-z-dlugim-rekawem-welna-merino-devold-duo-active-l",
+    "cena_celkem": "489.41 CZK",
+    "stav": {
+      "status_id": 2,
+      "limit_ceny_pct": 60
+    },
+    "navrzeny_verdikt": "ZVÁŽIT",
+    "verdikt": "ZVÁŽIT",
+    "upraveno_kodem": [],
+    "duvody": [
+      "Složení není uvedeno a u tohoto modelu bývá součástí syntetika, takže nelze ověřit požadavek na minimálně 80 % přírodních vláken.",
+      "Stáří kusu nelze z fotek ani popisu určit, chybí sezóna nebo datum výroby.",
+      "Prodávající nemá viditelné hodnocení ani recenze a nabídka nemá žádný popis."
+    ],
+    "podrobnosti": {
+      "stari_modelu": {
+        "odhad": "nelze určit",
+        "od_let": null,
+        "do_let": null,
+        "jistota": "nejisté",
+        "z_ceho": "Na fotkách ani v inzerátu není sezóna, datum výroby ani kód produktu. Model Duo Active se vyrábí déle, takže podle designu nelze stáří spolehlivě určit."
+      },
+      "cena_nove": {
+        "od_kc": 900,
+        "do_kc": 1300,
+        "jistota": "pravděpodobné",
+        "z_ceho": "Odhad podle typického prodejního rozmezí dlouhého trika Devold Duo Active. Aktuální cenu neověřuji.",
+        "pomer_ceny": {
+          "cena_celkem_kc": 489.41,
+          "pri_dolni_mezi_pct": 54,
+          "pri_horni_mezi_pct": 38
+        }
+      },
+      "izolace_material": "Složení není uvedeno ani v popisu, ani v dostupném štítku. Značka Devold a název Duo Active jsou čitelné. Materiál: neuvedeno.",
+      "stav_podle_fotek": "Tričko je na fotkách čisté, bez viditelných děr, skvrn nebo žmolků. Jsou patrné jen mírné záhyby od uložení. Manžety a podpaží jsou vidět jen částečně.",
+      "chybejici_fotky": [
+        "Štítek se složením a údajem o stáří",
+        "Detail podpaží a manžet",
+        "Detail možného molení v protisvětle"
+      ],
+      "prodavajici": "sojak89. Hodnocení ani počet recenzí nejsou k dispozici a popis chybí. Nízká důvěryhodnost jako riziko.",
+      "otazky_na_prodavajiciho": [
+        "Jaké je přesné složení (% merina a dalších vláken)?",
+        "Z jaké sezóny kus je, nebo kdy byl koupen?",
+        "Můžete vyfotit štítek se složením a detail podpaží a manžet?",
+        "Jak dlouho a k jakému účelu byl kus nošen?"
+      ],
+      "prirodna_vlakna_pct": null
+    },
+    "model": "claude-haiku-5-5",
+    "pouziti": {
+      "effort": "medium",
+      "input_tokens": 9132,
+      "output_tokens": 2608,
+      "pokusu": 1
+    },
+    "foto": "https://images1.vinted.net/tc/06_01e5c_tHiTrDUxMo4Wm98KLFge6wtH/cf9adb97.webp?s=6091876b631e01f2cbd4ab1d759f9853390673e8",
+    "beh_id": "2026-11-17T11:47:21.046Z",
+    "hodnoceno": "2026-11-17T11:48:26.889Z"
+  },
+  {
+    "id": "10843799216",
+    "kategorie": "merino",
+    "nazev": "Devold koszulka merino L multisport",
+    "url": "https://www.vinted.cz/items/10843799216-devold-koszulka-merino-l-multisport",
+    "cena_celkem": "778.25 CZK",
+    "stav": {
+      "status_id": 2,
+      "limit_ceny_pct": 60
+    },
+    "navrzeny_verdikt": "ZVÁŽIT",
+    "verdikt": "ZVÁŽIT",
+    "upraveno_kodem": [],
+    "duvody": [
+      "Fotky neukazují detaily podpaží, manžet, límce a švů, kde se merino nejdřív opotřebí, a chybí fotka štítku se složením.",
+      "Prodávající nemá žádné hodnocení ani recenze a inzerát nemá popis, takže historii trika nelze ověřit.",
+      "Odhad ceny nové věci je nejistý, takže cena nerozhoduje; podle fotek vypadá kus čistě a velikost L sedí."
+    ],
+    "podrobnosti": {
+      "stari_modelu": {
+        "odhad": "nelze určit",
+        "od_let": null,
+        "do_let": null,
+        "jistota": "nejisté",
+        "z_ceho": "Na fotkách není štítek s datem ani sezónou; logo Devold je malé a model z fotek nelze spolehlivě přiřadit ke kolekci. U merina je stáří méně důležité než stav a používání."
+      },
+      "cena_nove": {
+        "od_kc": 1000,
+        "do_kc": 1600,
+        "jistota": "nejisté",
+        "z_ceho": "Odhad podle typické ceny merino triček Devold Multisport v dlouhém rukávu v ČR; přesnou aktuální cenu modelu neznám, proto je rozmezí široké.",
+        "pomer_ceny": {
+          "cena_celkem_kc": 778.25,
+          "pri_dolni_mezi_pct": 78,
+          "pri_horni_mezi_pct": 49
+        }
+      },
+      "izolace_material": "Bez izolace (funkční merino triko). Složení: na fotce je text '100% MERINO WOOL', štítek s oficiálním složením na fotkách není vidět. Barva: černá s růžovými rukávy a raglánovými vsadkami, logo Devold na hrudi.",
+      "stav_podle_fotek": "Triko na fotkách vypadá čistě a bez viditelných děr, žmolků nebo zplstění, takže stav 'velmi dobrý' odpovídá. Detailní kontrola (díry od molů, prošoupání v podpaží a na manžetách) ale nemožná, protože detailní fotky chybí.",
+      "chybejici_fotky": [
+        "Štítek se složením a velikostí",
+        "Detail podpaží",
+        "Detail manžet",
+        "Detail límce a krku",
+        "Detail švů a případných děr v protisvětle"
+      ],
+      "prodavajici": "Uživatel rosomagh bez uvedeného hodnocení a bez recenzí, bez popisu nabídky. Nízká důvěryhodnost z dat, riziko nízké historie prodejce.",
+      "otazky_na_prodavajiciho": [
+        "Můžete poslat fotku štítku se složením a velikostí?",
+        "Můžete vyfotit podpaží, manžety a límec zblízka?",
+        "Jsou na triku díry od molů nebo prošoupání? Případně je prosím ukažte v protisvětle.",
+        "Jaké přesné rozměry má triko (šířka v podpaží, délka)?",
+        "Jak dlouho jste triko nosil(a) a jak se pralo?"
+      ],
+      "prirodna_vlakna_pct": 100
+    },
+    "model": "claude-haiku-5-5",
+    "pouziti": {
+      "effort": "medium",
+      "input_tokens": 9114,
+      "output_tokens": 1894,
+      "pokusu": 1
+    },
+    "foto": "https://images1.vinted.net/tc/04_0250c_TZGjk6RM63AV4yZ8xmixyC4P/e5530ade.webp?s=5d650d6983c13a9c4d6cf3cb0cf6ce18a9b6802b",
+    "beh_id": "2026-11-17T11:47:21.046Z",
+    "hodnoceno": "2026-11-17T11:48:39.641Z"
+  },
+  {
+    "id": "10851101852",
+    "kategorie": "upozornit",
+    "stitek": "Abraka",
+    "nazev": "Zateplené termoleginy Abraka",
+    "url": "https://www.vinted.cz/items/10851101852-zateplene-termoleginy-abraka",
+    "cena_celkem": "1330.50 CZK",
+    "foto": "https://images1.vinted.net/tc/04_0032b_ATxsUjBqJqHaSU2UqyC9HvRL/c4f29d5a.webp?s=2e9c7b21dab318716191cab44cf81164622e670f",
+    "beh_id": "2026-11-17T11:47:21.046Z",
+    "hodnoceno": "2026-11-17T11:49:39.305Z"
+  },
+  {
+    "id": "10851021730",
+    "kategorie": "upozornit",
+    "stitek": "Šaty Seasalt Cornwoll",
+    "nazev": "Sukienka lniana len bawełna Seasalt Cornwall 12 40",
+    "url": "https://www.vinted.cz/items/10851021730-sukienka-lniana-len-bawelna-seasalt-cornwall-12-40",
+    "cena_celkem": "312.67 CZK",
+    "foto": "https://images1.vinted.net/tc/02_0135b_P1Knat8PhJXgQSrNVWZhWcYx/3427cf53.webp?s=c5a8f55e88ed8f1e8dcf5e58f196fb5d2ad45b00",
+    "beh_id": "2026-11-17T11:47:21.046Z",
+    "hodnoceno": "2026-11-17T11:49:48.832Z"
+  },
+  {
+    "id": "10849908030",
+    "kategorie": "upozornit",
+    "stitek": "Šaty Seasalt Cornwoll",
+    "nazev": "Sukienka/ tunika firmy Seasalt Cornwall M",
+    "url": "https://www.vinted.cz/items/10849908030-sukienka-tunika-firmy-seasalt-cornwall-m",
+    "cena_celkem": "477.69 CZK",
+    "foto": "https://images1.vinted.net/tc/02_009d1_FpR7k2GYRvbVYSEscgrsy2z4/a8f4b06c.webp?s=daf0a03d0775306de2ee4e5dfa8216104312c0c9",
+    "beh_id": "2026-11-17T11:47:21.046Z",
+    "hodnoceno": "2026-11-17T11:49:48.834Z"
   }
 ]
